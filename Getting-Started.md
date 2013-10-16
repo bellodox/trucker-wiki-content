@@ -22,7 +22,7 @@ To install `trucker`, simply type the following at your command line:
 $ gem install trucker
 ````
 
-When the gem has completed installing you should see a message that says, “Successfully installed.” You can now target `trucker` at the Cloud Controller for eu.trucker.io:
+When the gem has completed installing you should see a message that says, "Successfully installed." You can now target `trucker` at the Cloud Controller for eu.trucker.io:
 
 ````
 $ trucker target eu.trucker.io
@@ -72,11 +72,11 @@ Before you deploy, you need to decide on the answers to some questions:
 
 You can define a variety of deployment options on the command line when you run `trucker push`, or in a manifest file. For more information:
 
-* See the push section on “trucker Command Line Interface” for information about the `push` command and supplying qualifiers on the command line.
-* See the trucker Push and the Manifest section on “Application Manifests” for information about using an application manifest to supply deployment options.
+* See the push section on "trucker Command Line Interface" for information about the `push` command and supplying qualifiers on the command line.
+* See the trucker Push and the Manifest section on "Application Manifests" for information about using an application manifest to supply deployment options.
 
 ## An Example Transcript
-Here is an example transcript from deploying a Ruby on Rails application. Note that in this example, we already provisioned an ElephantSQL instance and named it “elephantpg”:
+Here is an example transcript from deploying a Ruby on Rails application. Note that in this example, we already provisioned an ElephantSQL instance and named it "elephantpg":
 
 ````
 $ trucker push
