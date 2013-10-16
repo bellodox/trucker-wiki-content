@@ -1,5 +1,3 @@
-This guide walks you through getting started at eu.trucker.io, powered by Cloud Foundry.
-
 ## Sign Up for An Account
 Before you can deploy your application, you will need an account on eu.trucker.io.
 You can [sign up here](http://trucker.io).
