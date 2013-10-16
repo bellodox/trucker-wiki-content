@@ -1,5 +1,3 @@
-Trucker allows you to deploy applications without worrying about configuration headaches, making it faster and easier to build, test, deploy and scale your app.
-
 This guide walks you through getting started at run.trucker.io, powered by Cloud Foundry.
 
 ## Steps to Get Started
