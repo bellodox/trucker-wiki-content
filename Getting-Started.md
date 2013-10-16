@@ -1,13 +1,5 @@
 This guide walks you through getting started at eu.trucker.io, powered by Cloud Foundry.
 
-# Steps to Get Started
-In order to run your application on eu.trucker.io, you need to:
-
-1. Sign up for an account
-1. Install and configure the trucker command line tool
-1. Prepare your application on your local machine
-1. Push your application code to the cloud
-
 ## Sign Up for An Account
 Before you can deploy your application, you will need an account on eu.trucker.io.
 You can [sign up here](http://trucker.io).
