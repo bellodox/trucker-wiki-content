@@ -48,10 +48,10 @@ You can choose any of these spaces to deploy your application.
 ## Prepare Your Application for Deployment
 Cloud Foundry supports many frameworks and runtimes. Learn about the preparations for each below:
 
-###RUNTIME	FRAMEWORK
-Javascript	Node.js
-Java / JVM	Java Spring, Grails, Scala Lift, and Play
-Ruby	Rack, Rails, or Sinatra
+###RUNTIME  FRAMEWORK
+Javascript  Node.js
+Java / JVM  Java Spring, Grails, Scala Lift, and Play
+Ruby  Rack, Rails, or Sinatra
 Cloud Foundry supports these frameworks and runtimes using a buildpack model. Some of the Heroku third party buildpacks will work, but your experience may vary. To push an application using one of these buildpacks use `trucker push [appname] --buildpack=[git url]`
 
 ## Push Your Application to the Cloud
@@ -66,14 +66,14 @@ Before you deploy, you need to decide on the answers to some questions:
 **Start Command:** This is the command that Cloud Foundry will use to start each instance of your application. The start command is specific to your framework.
 * If you do not specify a start command when you push the application, Cloud Foundry will use the value of the `web` key in the `procfile` for the application, if it exists; failing that, Cloud Foundry will start the application using the value of the buildpack's web attribute of `default_process_types`.
 
-**URL and Domain:** `cf` will prompt you for both a URL and a domain. The URL is the subdomain for your application and it will be hosted at the primary domain you choose. The combination of the URL and domain must be globally unique.
+**URL and Domain:** `trucker` will prompt you for both a URL and a domain. The URL is the subdomain for your application and it will be hosted at the primary domain you choose. The combination of the URL and domain must be globally unique.
 
-**Services:** `cf` will ask you if you want to create and bind one or more services such as MySQL or Redis to your application. For the purposes of this guide, you can answer no when prompted to add a service. Services are addressed in the next guide, Adding a Service.
+**Services:** `trucker` will ask you if you want to create and bind one or more services such as MySQL or Redis to your application. For the purposes of this guide, you can answer no when prompted to add a service. Services are addressed in the next guide, Adding a Service.
 
-You can define a variety of deployment options on the command line when you run `cf push`, or in a manifest file. For more information:
+You can define a variety of deployment options on the command line when you run `trucker push`, or in a manifest file. For more information:
 
 * See the push section on “trucker Command Line Interface” for information about the `push` command and supplying qualifiers on the command line.
-* See the cf Push and the Manifest section on “Application Manifests” for information about using an application manifest to supply deployment options.
+* See the trucker Push and the Manifest section on “Application Manifests” for information about using an application manifest to supply deployment options.
 
 ## An Example Transcript
 Here is an example transcript from deploying a Ruby on Rails application. Note that in this example, we already provisioned an ElephantSQL instance and named it “elephantpg”:
@@ -98,12 +98,12 @@ Creating whiteboard... OK
 2: none
 Subdomain> whiteboard
 
-1: cfapps.io
+1: truckerapps.io
 2: none
-Domain> cfapps.io
+Domain> truckerapps.io
 
-Creating route whiteboard.cfapps.io... OK
-Binding whiteboard.cfapps.io to whiteboard... OK
+Creating route whiteboard.truckerapps.io... OK
+Binding whiteboard.truckerapps.io to whiteboard... OK
 
 Create services for application?> n
 
