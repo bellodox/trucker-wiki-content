@@ -1,7 +1,7 @@
-This guide walks you through getting started at run.trucker.io, powered by Cloud Foundry.
+This guide walks you through getting started at eu.trucker.io, powered by Cloud Foundry.
 
 ## Steps to Get Started
-In order to run your application on run.trucker.io, you need to:
+In order to run your application on eu.trucker.io, you need to:
 
 1. Sign up for an account
 1. Install and configure the trucker command line tool
@@ -9,7 +9,7 @@ In order to run your application on run.trucker.io, you need to:
 1. Push your application code to the cloud
 
 ## Sign Up for An Account
-Before you can deploy your application, you will need an account on run.trucker.io.
+Before you can deploy your application, you will need an account on eu.trucker.io.
 You can [sign up here](http://trucker.io).
 
 ## Install trucker Command Line Tool
@@ -22,11 +22,11 @@ To install `trucker`, simply type the following at your command line:
 $ gem install trucker
 ````
 
-When the gem has completed installing you should see a message that says, “Successfully installed.” You can now target `trucker` at the Cloud Controller for run.trucker.io:
+When the gem has completed installing you should see a message that says, “Successfully installed.” You can now target `trucker` at the Cloud Controller for eu.trucker.io:
 
 ````
-$ trucker target api.run.trucker.io
-Setting target to https://api.run.pivotal.io... OK
+$ trucker target eu.trucker.io
+Setting target to https:/eu.trucker.io... OK
 ````
 
 Then log in:
