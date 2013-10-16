@@ -78,7 +78,7 @@ You can define a variety of deployment options on the command line when you run 
 ## An Example Transcript
 Here is an example transcript from deploying a Ruby on Rails application. Note that in this example, we already provisioned an ElephantSQL instance and named it "elephantpg":
 
-````
+```
 $ trucker push
 Name> whiteboard
 
@@ -160,7 +160,7 @@ Staging in progress...
   0/1 instances: 1 starting
   1/1 instances: 1 running
 OK
-````
+```
 
 ## Troubleshooting
 If your application does not start on Cloud Foundry, it's a good idea to double-check that your application can run locally.
@@ -168,26 +168,34 @@ If your application does not start on Cloud Foundry, it's a good idea to double-
 You can troubleshoot your application in the cloud using `trucker`.
 
 To check the health of your application, use
-````
+
+```
 trucker health appname
-````
+```
+
 To check how much memory your application is using:
-````
+
+```
 trucker stats appname
-````
+```
+
 To see the environment variables and recent log entries:
-````
+
+```
 trucker logs appname
-````
+```
+
 To tail your logs:
-````
+
+```
 trucker tail appname
-````
+```
 
 If your application has crashed and you cannot retrieve the logs with cf logs, you can retrieve its dying words with:
-````
+
+```
 trucker crashlogs appname
-````
+```
 
 ## Next Step - Binding a service
 Binding and using a service is covered in our guide, Adding a Service.
