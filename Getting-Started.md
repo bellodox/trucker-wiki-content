@@ -8,11 +8,11 @@ In order to run your application on eu.trucker.io, you need to:
 1. Prepare your application on your local machine
 1. Push your application code to the cloud
 
-## Sign Up for An Account
+## Sign Up for An Account{#id}
 Before you can deploy your application, you will need an account on eu.trucker.io.
 You can [sign up here](http://trucker.io).
 
-## Install trucker Command Line Tool
+## Install trucker Command Line Tool{#id}
 You'll use the `trucker` command line tool to deploy your application. You can also use it to check on the health of your application, change settings, and stop and restart your app.
 
 Because `trucker` is a Ruby gem, you will need to have Ruby and RubyGems installed. See the [Installing Ruby](installing-ruby) page for help installing Ruby and RubyGems.
@@ -45,7 +45,7 @@ Space>
 ```
 You can choose any of these spaces to deploy your application.
 
-## Prepare Your Application for Deployment
+## Prepare Your Application for Deployment{#id}
 Cloud Foundry supports many frameworks and runtimes. Learn about the preparations for each below:
 
 ###RUNTIME  FRAMEWORK
@@ -54,7 +54,7 @@ Java / JVM  Java Spring, Grails, Scala Lift, and Play
 Ruby  Rack, Rails, or Sinatra
 Cloud Foundry supports these frameworks and runtimes using a buildpack model. Some of the Heroku third party buildpacks will work, but your experience may vary. To push an application using one of these buildpacks use `trucker push [appname] --buildpack=[git url]`
 
-## Push Your Application to the Cloud
+## Push Your Application to the Cloud{#id}
 Before you deploy, you need to decide on the answers to some questions:
 
 **Name:** You can use any series of alpha-numeric characters without spaces as the name of your application.
