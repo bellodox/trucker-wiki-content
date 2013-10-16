@@ -8,11 +8,11 @@ In order to run your application on eu.trucker.io, you need to:
 1. Prepare your application on your local machine
 1. Push your application code to the cloud
 
-# Sign Up for An Account
+## Sign Up for An Account
 Before you can deploy your application, you will need an account on eu.trucker.io.
 You can [sign up here](http://trucker.io).
 
-# Install trucker Command Line Tool
+## Install trucker Command Line Tool
 You'll use the `trucker` command line tool to deploy your application. You can also use it to check on the health of your application, change settings, and stop and restart your app.
 
 Because `trucker` is a Ruby gem, you will need to have Ruby and RubyGems installed. See the [Installing Ruby](installing-ruby) page for help installing Ruby and RubyGems.
@@ -45,7 +45,7 @@ Space>
 ```
 You can choose any of these spaces to deploy your application.
 
-# Prepare Your Application for Deployment
+## Prepare Your Application for Deployment
 Cloud Foundry supports many frameworks and runtimes. Learn about the preparations for each below:
 
 ###RUNTIME  FRAMEWORK
@@ -54,7 +54,7 @@ Java / JVM  Java Spring, Grails, Scala Lift, and Play
 Ruby  Rack, Rails, or Sinatra
 Cloud Foundry supports these frameworks and runtimes using a buildpack model. Some of the Heroku third party buildpacks will work, but your experience may vary. To push an application using one of these buildpacks use `trucker push [appname] --buildpack=[git url]`
 
-# Push Your Application to the Cloud
+## Push Your Application to the Cloud
 Before you deploy, you need to decide on the answers to some questions:
 
 **Name:** You can use any series of alpha-numeric characters without spaces as the name of your application.
@@ -75,7 +75,7 @@ You can define a variety of deployment options on the command line when you run 
 * See the push section on "trucker Command Line Interface" for information about the `push` command and supplying qualifiers on the command line.
 * See the trucker Push and the Manifest section on "Application Manifests" for information about using an application manifest to supply deployment options.
 
-# An Example Transcript
+## An Example Transcript
 Here is an example transcript from deploying a Ruby on Rails application. Note that in this example, we already provisioned an ElephantSQL instance and named it "elephantpg":
 
 ```
@@ -162,7 +162,7 @@ Staging in progress...
 OK
 ```
 
-# Troubleshooting
+## Troubleshooting
 If your application does not start on Cloud Foundry, it's a good idea to double-check that your application can run locally.
 
 You can troubleshoot your application in the cloud using `trucker`.
@@ -197,5 +197,5 @@ If your application has crashed and you cannot retrieve the logs with cf logs, y
 trucker crashlogs appname
 ```
 
-# Next Step - Binding a service
+## Next Step - Binding a service
 Binding and using a service is covered in our guide, Adding a Service.
