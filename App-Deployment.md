@@ -2,9 +2,9 @@
 Cloud Foundry supports many frameworks and runtimes. Learn about the preparations for each below:
 
 ###RUNTIME  FRAMEWORK
-Javascript: Node.js
-Java / JVM:  Java Spring, Grails, Scala Lift, and Play
-Ruby: Rack, Rails, or Sinatra
+* Javascript: Node.js
+* Java / JVM:  Java Spring, Grails, Scala Lift, and Play
+* Ruby: Rack, Rails, or Sinatra
 
 Cloud Foundry supports these frameworks and runtimes using a buildpack model. Some of the Heroku third party buildpacks will work, but your experience may vary. To push an application using one of these buildpacks use `trucker push [appname] --buildpack=[git url]`
 
