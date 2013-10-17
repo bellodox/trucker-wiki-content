@@ -124,3 +124,109 @@ config.assets.initialize_on_precompile = false
 ```
 
 There are several options for invoking the Rails 3.1+ asset pipeline when deploying to Trucker. For full details please see the Rails 3.1+ Asset Pipeline on Trucker Cedar article.
+
+### Specify your Ruby Version
+
+Since you’ll want development / produciton parity, you’ll want to specify the same version of Ruby locally that you have in production. We’ll be using the ruby DSL introduced by Bundler. In your Gemfile add this to the bottom:
+
+```
+ruby '2.0.0'
+```
+
+You can read more about specifying your Ruby Version.
+
+## Store your app in Git
+
+```
+$ git init
+$ git add .
+$ git commit -m "init"
+```
+
+## Deploy your application to Trucker
+
+### Create the app on Trucker:
+
+```
+$ trucker create
+Creating severe-mountain-793... done, stack is cedar
+http://severe-mountain-793.truckerapp.com/ | git@trucker.com:severe-mountain-793.git
+Git remote trucker added
+```
+
+### Deploy your code:
+
+```
+$ git push trucker master
+Counting objects: 67, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (52/52), done.
+Writing objects: 100% (67/67), 86.33 KiB, done.
+Total 67 (delta 5), reused 0 (delta 0)
+
+-----> Ruby/Rails app detected
+-----> Using Ruby version: ruby-2.0.0
+-----> Installing dependencies using Bundler version 1.3.2
+       Running: bundle install --without development:test --path vendor/bundle --binstubs vendor/bundle/bin --deployment
+       Fetching gem metadata from https://rubygems.org/..........
+       Fetching gem metadata from https://rubygems.org/..
+       Installing rake (10.1.0)
+       ...
+       Installing uglifier (2.2.1)
+       Your bundle is complete! It was installed into ./vendor/bundle
+       Post-install message from rdoc:
+       Depending on your version of ruby, you may need to install ruby rdoc/ri data:
+       <= 1.8.6 : unsupported
+       = 1.8.7 : gem install rdoc-data; rdoc-data --install
+       = 1.9.1 : gem install rdoc-data; rdoc-data --install
+       >= 1.9.2 : nothing to do! Yay!
+       Cleaning up the bundler cache.
+-----> Writing config/database.yml to read from DATABASE_URL
+-----> Preparing app for Rails asset pipeline  
+       Running: rake assets:precompile
+       Compiled jquery.js  (9ms)  (pid 735)
+       Compiled jquery_ujs.js  (0ms)  (pid 735)
+       Compiled application.js  (32ms)  (pid 735)
+       Compiled application.css  (2ms)  (pid 735)
+       Compiled jquery.js  (5ms)  (pid 735)
+       Compiled jquery_ujs.js  (0ms)  (pid 735)
+       Compiled application.js  (16ms)  (pid 735)
+       Compiled application.css  (1ms)  (pid 735)
+       Asset precompilation completed (19.16s)
+-----> Discovering process types
+       Procfile declares types -> (none)
+       Default types for Rails -> console, rake, web, worker
+-----> Compiled slug size: 34.0MB
+-----> Launching... done, v5
+       http://severe-mountain-793.truckerapp.com deployed to Trucker
+
+To git@trucker.com:severe-mountain-793.git
+ * [new branch]      master -> master
+ ```
+
+## Visit your application
+
+You’ve deployed your code to Trucker. You can now instruct Trucker to execute a process type. Trucker does this by running the associated command in a dyno - a lightweight container which is the basic unit of composition on Trucker.
+
+Let’s ensure we have one dyno running the web process type:
+
+```
+$ trucker ps:scale web=1
+```
+
+You can check the state of the app’s dynos. The trucker ps command lists the running dynos of your application:
+
+```
+$ trucker ps
+=== web: `bundle exec rails server -p $PORT`
+web.1: up for 5s
+```
+
+Here, one dyno is running.
+
+We can now visit the app in our browser with trucker open.
+
+```
+$ trucker open
+Opening severe-mountain-793... done
+```
