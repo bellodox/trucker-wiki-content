@@ -5,5 +5,5 @@
 1. [[App Deployment|App-Deployment]]
   * [[Prepare Your Application for Deployment|App Deployment#prepare-your-application-for-deployment]]
   * [[Push Your Application to the Cloud|App Deployment#push-your-application-to-the-cloud]]
-  * [[Push Your Application to the Cloud|App Deployment#an-example-transcript]]
-  * [[Push Your Application to the Cloud|App Deployment#troubleshooting]]
+  * [[An Example Transcript|App Deployment#an-example-transcript]]
+  * [[Troubleshooting|App Deployment#troubleshooting]]
