@@ -400,7 +400,6 @@ Then you’ve hit this problem. First, duplicate the problem locally like so:
 
 ``
 $ bundle install --without development:test
-...
 $ bundle exec rake -T
 rake aborted!
 no such file to load -- rspec/core/rake_task
