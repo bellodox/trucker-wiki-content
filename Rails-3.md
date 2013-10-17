@@ -359,3 +359,68 @@ $ trucker logs
 ```
 
 See Deploying Rails Applications With Unicorn to learn how to configure Unicorn for production.
+
+## Troubleshooting
+
+If you push up your app and it crashes (`trucker ps` shows state crashed), check your logs to find out what went wrong. Here are some common problems.
+
+### Failed to require a sourcefile
+
+If your app failed to require a sourcefile, chances are good you’re running Ruby 1.9.1 or 1.8 in your local environment. The load paths have changed in Ruby 1.9 which also applies to Ruby 2.0.0. Port your app forward to Ruby 2.0.0 making certain it works locally before trying to push to Cedar again.
+
+### Encoding error
+
+Ruby 1.9 added more sophisticated encoding support to the language which also applies to Ruby 2.0.0. If you hit an encoding error, you probably haven’t fully tested your app with Ruby 2.0.0 in your local environment. Port your app forward to Ruby 2.0.0 making certain it works locally before trying to push to Cedar again.
+
+### Missing a gem
+
+If your app crashes due to missing a gem, you may have it installed locally but not specified in your `Gemfile`. You must isolate all local testing using `bundle exec`. For example, don’t run `ruby web.rb`, run `bundle exec ruby web.rb`. Don’t run `rake db:migrate`, run `bundle exec rake db:migrate`.
+
+Another approach is to create a blank RVM gemset to be absolutely sure you’re not touching any system-installed gems:
+
+```
+$ rvm gemset create myapp
+$ rvm gemset use myapp
+```
+
+### Runtime dependencies on development/test gems
+
+If you’re still missing a gem when you deploy, check your Bundler groups. Trucker builds your app without the `development` or `test` groups, and if your app depends on a gem from one of these groups to run, you should move it out of the group.
+
+One common example using the RSpec tasks in your `Rakefile`. If you see this in your Trucker deploy:
+
+```
+$ trucker run rake -T
+Running `bundle exec rake -T` attached to terminal... up, ps.3
+rake aborted!
+no such file to load -- rspec/core/rake_task
+```
+
+Then you’ve hit this problem. First, duplicate the problem locally like so:
+
+``
+$ bundle install --without development:test
+...
+$ bundle exec rake -T
+rake aborted!
+no such file to load -- rspec/core/rake_task
+```
+
+Now you can fix it by making these Rake tasks conditional on the gem load. For example:
+
+### Rakefile
+
+```
+begin
+  require "rspec/core/rake_task"
+
+  desc "Run all examples"
+  RSpec::Core::RakeTask.new(:spec) do |t|
+    t.rspec_opts = %w[--color]
+    t.pattern = 'spec/**/*_spec.rb'
+  end
+rescue LoadError
+end
+```
+
+Confirm it works locally, then push to Trucker.
