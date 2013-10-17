@@ -1,6 +1,6 @@
 1. [[Home|Home]]
 2. [[Getting Started|Getting-Started]]
   * [[Sign Up for An Account|Getting Started#sign-up-for-an-account]]
-  * [[Install trucker Command Line Tool|Getting Started#install-trucker-command-line-tool]]
+  * [[Install trucker Command Line Tool|Install trucker Command Line Tool]]
   * [[Prepare Your Application for Deployment|Getting Started#prepare-your-application-for-deployment]]
   * [[Push Your Application to the Cloud|Getting Started#push-your-application-to-the-cloud]]
