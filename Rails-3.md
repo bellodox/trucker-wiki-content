@@ -287,3 +287,75 @@ Database migrations like above are not run automatically. If you have migrations
 ## Webserver
 
 By default, your app’s web process runs rails server, which uses Webrick. This is fine for testing, but for production apps you’ll want to switch to a more robust webserver. On Cedar, we recommend Unicorn as the webserver. Regardless of the webserver you choose, production apps should always specify the webserver explicitly in the `Procfile`.
+
+### Procfile
+
+Change the command used to launch your web process by creating a file called Procfile and entering this:
+
+```
+web: bundle exec unicorn -p $PORT -E $RACK_ENV
+```
+
+Set the `RACK_ENV` to development in your environment and a `PORT` to connect to. Before pushing to Trucker you’ll want to test with the `RACK_ENV` set to production since this is the enviroment your Trucker app will run in.
+
+```
+$ echo "RACK_ENV=development" >>.env
+$ echo "PORT=5000" >> .env
+```
+
+You’ll also want to add .env to your .gitignore since this is for local enviroment setup.
+
+```
+$ echo ".env" >> .gitignore
+$ git add .gitignore
+$ git commit -m "add .env to .gitignore"
+```
+
+You’ll need to install the Unicorn gem by adding this to your Gemfile:
+
+```
+gem 'unicorn'
+```
+
+Now run bundle install to install it locally.
+
+Test your Procfile locally using Foreman:
+
+```
+$ foreman start
+17:04:16 web.1  | started with pid 20032
+17:04:16 web.1  | I, [2013-03-13T17:04:16.857230 #20034]  INFO -- : listening on addr=0.0.0.0:5000 fd=9
+17:04:16 web.1  | I, [2013-03-13T17:04:16.857402 #20034]  INFO -- : worker=0 spawning...
+17:04:16 web.1  | I, [2013-03-13T17:04:16.858497 #20034]  INFO -- : master process ready
+17:04:16 web.1  | I, [2013-03-13T17:04:16.859851 #20038]  INFO -- : worker=0 spawned pid=20038
+17:04:16 web.1  | I, [2013-03-13T17:04:16.859978 #20038]  INFO -- : Refreshing Gem list
+```
+
+Looks good, so press Ctrl-C to exit. Deploy your changes to Trucker:
+
+```
+$ git add .
+$ git commit -m "use unicorn via procfile"
+$ git push trucker
+```
+
+Check ps, you’ll see the web dyno uses your new command specifying Unicorn as the webserver:
+
+```
+$ trucker ps
+Process       State               Command
+------------  ------------------  ------------------------------
+web.1         starting for 3s     bundle exec unicorn -p $PORT..
+The logs also reflect that we are now using Unicorn:
+$ trucker logs
+2013-03-14T00:08:50+00:00 trucker[web.1]: State changed from created to starting
+2013-03-14T00:08:53+00:00 trucker[web.1]: Starting process with command `bundle exec unicorn -p 38195 -E $RACK_ENV`
+2013-03-14T00:08:54+00:00 app[web.1]: I, [2013-03-14T00:08:54.833013 #2]  INFO -- : listening on addr=0.0.0.0:38195 fd=9
+2013-03-14T00:08:54+00:00 app[web.1]: I, [2013-03-14T00:08:54.834767 #2]  INFO -- : worker=0 spawning...
+2013-03-14T00:08:54+00:00 app[web.1]: I, [2013-03-14T00:08:54.842064 #2]  INFO -- : master process ready
+2014-03-14T00:08:54+00:00 app[web.1]: I, [2013-03-14T00:08:54.843165 #5]  INFO -- : worker=0 spawned pid=5
+2013-03-14T00:08:54+00:00 app[web.1]: I, [2013-03-14T00:08:54.843441 #5]  INFO -- : Refreshing Gem list
+2013-03-14T00:08:56+00:00 trucker[web.1]: State changed from starting to up
+```
+
+See Deploying Rails Applications With Unicorn to learn how to configure Unicorn for production.
