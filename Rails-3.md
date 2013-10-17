@@ -230,3 +230,60 @@ We can now visit the app in our browser with trucker open.
 $ trucker open
 Opening severe-mountain-793... done
 ```
+
+## Dyno sleeping and scaling
+
+Having only a single web dyno running will result in the dyno going to sleep after one hour of inactivity. This causes a delay of a few seconds for the first request upon waking. Subsequent requests will perform normally.
+
+To avoid this, you can scale to more than one web dyno. For example:
+
+```
+$ trucker ps:scale web=2
+```
+
+For each application, Trucker provides 750 free dyno-hours. Running your app at 2 dynos would exceed this free, monthly allowance, so let’s scale back:
+
+```
+$ trucker ps:scale web=1
+```
+
+## View the logs
+
+Trucker treats logs as streams of time-ordered events aggregated from the output streams of all the dynos running the components of your application. Trucker’s Logplex provides a single channel for all of these events.
+
+For example, you can easily view information about your running app using one of the logging commands, trucker logs:
+
+```
+$ trucker logs
+2011-03-10T11:10:34-08:00 trucker[web.1]: State changed from created to starting
+2011-03-10T11:10:37-08:00 trucker[web.1]: Running process with command: `bundle exec rails server -p 53136`
+2011-03-10T11:10:40-08:00 app[web.1]: [2011-03-10 19:10:40] INFO  WEBrick 1.3.1
+2011-03-10T11:10:40-08:00 app[web.1]: [2011-03-10 19:10:40] INFO  ruby 2.0.0 (2013-06-27) [x86_64-linux]
+2011-03-10T11:10:40-08:00 app[web.1]: [2011-03-10 19:10:40] INFO  WEBrick::HTTPServer#start: pid=12198 port=53136
+2011-03-10T11:10:42-08:00 trucker[web.1]: State changed from starting to up
+```
+
+## Console
+
+Trucker allows you to run commands in a one-off dyno - scripts and applications that only need to be executed when needed - using the trucker run command. Use this to launch a Rails console process attached to your local terminal for experimenting in your app’s environment:
+
+```
+$ trucker run rails console
+Running `bundle exec rails console` attached to terminal... up, ps.1
+Loading production environment (Rails 3.2.14)
+irb(main):001:0>
+```
+
+## Rake and Database Migrations
+
+Rake can be run as an attached process exactly like the console:
+
+```
+$ trucker run rake db:migrate
+```
+
+Database migrations like above are not run automatically. If you have migrations to run, make sure to run trucker run rake db:migrate after a deploy. You can find more on Rake commands.
+
+## Webserver
+
+By default, your app’s web process runs rails server, which uses Webrick. This is fine for testing, but for production apps you’ll want to switch to a more robust webserver. On Cedar, we recommend Unicorn as the webserver. Regardless of the webserver you choose, production apps should always specify the webserver explicitly in the `Procfile`.
