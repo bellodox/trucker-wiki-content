@@ -1,3 +1,5 @@
+# Rails 3
+
 ### Table of Contents
 
 * Prerequisites
