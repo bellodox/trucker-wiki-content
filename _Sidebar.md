@@ -8,5 +8,5 @@
   * [[An Example Transcript|App Deployment#an-example-transcript]]
   * [[Troubleshooting|App Deployment#troubleshooting]]
 1. [[Application Architecture|Application-Architecture]]
-  * [[Ruby|Ruby]]
-    * [[Rails|Getting-Started-with-3-dot-x]]
+  * [[Rails 3.x|Getting-Started-with-Rails-3x]]
+  * [[Rails 3.x|Getting-Started-with-Rails-4x]]
