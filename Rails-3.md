@@ -27,21 +27,14 @@ A Trucker user account. Signup is free and instant.
 
 ### Local workstation setup
 
-Install the Trucker Toolbelt on your local workstation. This ensures that you have access to the Trucker command-line client, Foreman, and the Git revision control system.
+Install trucker Command Line Tool on your local workstation. This ensures that you have access to the Trucker command-line client, Foreman, and the Git revision control system.
 Once installed, you’ll have access to the trucker command from your command shell. Log in using the email address and password you used when creating your Trucker account:
 
 ```
 $ trucker login
-Enter your Trucker credentials.
-Email: adam@example.com
-Password: 
-Could not find an existing public key.
-Would you like to generate one? [Yn] 
-Generating new SSH public key.
-Uploading ssh public key /Users/adam/.ssh/id_rsa.pub
+email>
+password>
 ```
-
-Press enter at the prompt to upload your existing ssh key or create a new one, used for pushing code later on.
 
 We highly recommend using PostgreSQL during development. Maintaining parity between your development and deployment environments prevents subtle bugs from being introduced because of differences between your environments.
 
