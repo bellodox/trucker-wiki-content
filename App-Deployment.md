@@ -151,5 +151,5 @@ If your application has crashed and you cannot retrieve the logs with cf logs, y
 trucker crashlogs appname
 ```
 
-## Next Step - Binding a service
+### Next Step - Binding a service
 Binding and using a service is covered in our guide, Adding a Service.
