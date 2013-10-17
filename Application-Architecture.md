@@ -1,7 +1,7 @@
 ## Getting Started with:
 
 * Ruby
-  * [[Rails 3.x|Getting-Started-with-Rails-3x]]
+  * [[Rails 3|Rails-3]]
   * Rails 4.x
   * Rack
 * Node.js
