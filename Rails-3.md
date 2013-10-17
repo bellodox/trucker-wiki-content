@@ -13,7 +13,7 @@
 * [[Console|Rails-3#console]]
 * [[Rake and Database Migrations|Rails-3#rake-and-database-migrations]]
 * [[Webserver|Rails-3#webserver]]
-* [[Troubleshooting|Rails-3#troubleshooting]]
+* [[Troubleshooting|Rails-3#rails-troubleshooting]]
 * [[Next steps|Rails-3#next-steps]]
 
 This quickstart will get you going with Rails 3, deployed to Trucker. The latest version of Rails is Rails 4. If you’re starting a new app, you’ll probably want to use Getting Started with Rails 4. For Sinatra or other Ruby apps, please see Getting Started with Ruby on Trucker.
@@ -360,7 +360,7 @@ $ trucker logs
 
 See Deploying Rails Applications With Unicorn to learn how to configure Unicorn for production.
 
-## Troubleshooting
+## Rails Troubleshooting
 
 If you push up your app and it crashes (`trucker ps` shows state crashed), check your logs to find out what went wrong. Here are some common problems.
 

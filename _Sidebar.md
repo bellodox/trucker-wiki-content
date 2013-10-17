@@ -20,3 +20,5 @@
     * [[Console|Rails-3#console]]
     * [[Rake and Database Migrations|Rails-3#rake-and-database-migrations]]
     * [[Webserver|Rails-3#webserver]]
+    * [[Troubleshooting|Rails-3#rails-troubleshooting]]
+    * [[Next steps|Rails-3#next-steps]]
