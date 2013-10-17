@@ -202,7 +202,7 @@ Total 67 (delta 5), reused 0 (delta 0)
 
 To git@trucker.com:severe-mountain-793.git
  * [new branch]      master -> master
- ```
+```
 
 ## Visit your application
 
