@@ -9,4 +9,3 @@
   * [[Troubleshooting|App Deployment#troubleshooting]]
 1. [[Application Architecture|Application-Architecture]]
   * [[Rails 3.x|Getting-Started-with-Rails-3x]]
-  * [[Rails 4.x|Getting-Started-with-Rails-4x]]
