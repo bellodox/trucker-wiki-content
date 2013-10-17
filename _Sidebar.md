@@ -8,4 +8,4 @@
   * [[An Example Transcript|App Deployment#an-example-transcript]]
   * [[Troubleshooting|App Deployment#troubleshooting]]
 1. [[Application Architecture|Application-Architecture]]
-  * [[Rails 3|Rails-3]]
+  * [[Rails 3|Rails-3#rails-3]]
