@@ -241,7 +241,7 @@ Checking status of app 'trucker-test'...
 Push successful! App 'trucker-test' available at http://trucker-test.trucker.io
 ```
 
-App 'trucker-test' available at http://trucker-test.trucker.io
+You application is now available at http://trucker-test.trucker.io
 
 ## View the logs
 
