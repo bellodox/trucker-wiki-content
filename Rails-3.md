@@ -7,7 +7,6 @@
 * [[Write your app|Rails-3#write-your-app]]
 * [[Store your app in Git|Rails-3#store-your-app-in-git]]
 * [[Deploy your application to Trucker|Rails-3#deploy-your-application-to-trucker]]
-* [[Visit your application|Rails-3#visit-your-application]]
 * [[View the logs|Rails-3#view-the-logs]]
 * [[Rails Console and Rake|Rails-3#rails-console-and-rake]]
 * [[Troubleshooting|Rails-3#rails-troubleshooting]]
