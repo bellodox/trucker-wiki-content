@@ -32,9 +32,7 @@ email>
 password>
 ```
 
-We highly recommend using PostgreSQL during development. Maintaining parity between your development and deployment environments prevents subtle bugs from being introduced because of differences between your environments.
-
-Trucker provides you a PostgreSQL database for our app, so we’ll be using PostgreSQL as our local database as well. You will need to set this up locally.
+We highly recommend using Mysql during development. Maintaining parity between your development and deployment environments prevents subtle bugs from being introduced because of differences between your environments.
 
 ## Write your app
 
