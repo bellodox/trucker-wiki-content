@@ -164,7 +164,7 @@ $ git commit -m "init"
 
 **Push the application to Trucker.io**
 
-1. First perform a push command and enter your desired application name.
+First perform a push command and enter your desired application name.
 
 ```
 $ trucker push
@@ -192,7 +192,7 @@ Creating route trucker-test.trucker.io... OK
 Binding trucker-test.trucker.io to trucker-test... OK
 ```
 
-2. Time to add a mysql service
+Time to add a mysql service
 
 ```
 Create services for application?> y
@@ -211,7 +211,7 @@ Binding cleardb-505d6 to trucker-test... OK
 Create another service?> n
 ```
 
-3. Deployment
+**Deployment**
 
 You app will now be deployed, the output should look something like this:
 
