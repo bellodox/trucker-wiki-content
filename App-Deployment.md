@@ -1,12 +1,12 @@
 ## Prepare Your Application for Deployment
-Cloud Foundry supports many frameworks and runtimes. Learn about the preparations for each below:
+Trucker supports many frameworks and runtimes. Learn about the preparations for each below:
 
 ###RUNTIME  FRAMEWORK
 * **Javascript:** Node.js
 * **Java / JVM:** Java Spring, Grails, Scala Lift and Play
 * **Ruby:** Rack, Rails or Sinatra
 
-Cloud Foundry supports these frameworks and runtimes using a buildpack model. Some of the Heroku third party buildpacks will work, but your experience may vary. To push an application using one of these buildpacks use `truck push [appname] --buildpack=[git url]`
+Trucker supports these frameworks and runtimes using a buildpack model. Some of the Heroku third party buildpacks will work, but your experience may vary. To push an application using one of these buildpacks use `truck push [appname] --buildpack=[git url]`
 
 ## Push Your Application to the Cloud
 Before you deploy, you need to decide on the answers to some questions:
@@ -17,8 +17,8 @@ Before you deploy, you need to decide on the answers to some questions:
 
 **Memory Limit:** The maximum amount of memory that each instance of your application is allowed to consume. If an instance goes over the maximum limit, it will be restarted. If it has to be restarted too often, it will be terminated. So make sure you are generous in your memory limit.
 
-**Start Command:** This is the command that Cloud Foundry will use to start each instance of your application. The start command is specific to your framework.
-* If you do not specify a start command when you push the application, Cloud Foundry will use the value of the `web` key in the `procfile` for the application, if it exists; failing that, Cloud Foundry will start the application using the value of the buildpack's web attribute of `default_process_types`.
+**Start Command:** This is the command that Trucker will use to start each instance of your application. The start command is specific to your framework.
+* If you do not specify a start command when you push the application, Trucker will use the value of the `web` key in the `procfile` for the application, if it exists; failing that, Trucker will start the application using the value of the buildpack's web attribute of `default_process_types`.
 
 **URL and Domain:** `truck` will prompt you for both a URL and a domain. The URL is the subdomain for your application and it will be hosted at the primary domain you choose. The combination of the URL and domain must be globally unique.
 
@@ -97,9 +97,9 @@ Push successful! App 'trucker-test' available at http://trucker-test.trucker.io
 ```
 
 ## Troubleshooting
-If your application does not start on Cloud Foundry, it's a good idea to double-check that your application can run locally.
+If your application does not start on Trucker, it's a good idea to double-check that your application can run locally.
 
-You can troubleshoot your application in the cloud using `trucker`.
+You can troubleshoot your application in the cloud using `truck`.
 
 To check the health of your application, use
 
