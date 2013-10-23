@@ -1,7 +1,7 @@
 1. [[Home|Home]]
 1. [[Getting Started|Getting-Started]]
   * [[Sign Up for An Account|Getting Started#sign-up-for-an-account]]
-  * [[Install trucker Command Line Tool|Getting Started#install-trucker-command-line-tool]]
+  * [[Install Trucker Command Line Tool|Getting Started#install-trucker-command-line-tool]]
 1. [[App Deployment|App-Deployment]]
   * [[Prepare Your Application for Deployment|App Deployment#prepare-your-application-for-deployment]]
   * [[Push Your Application to the Cloud|App Deployment#push-your-application-to-the-cloud]]
