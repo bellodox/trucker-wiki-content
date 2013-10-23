@@ -22,11 +22,11 @@ A Trucker user account. Signup is free and instant.
 
 ### Local workstation setup
 
-Install trucker Command Line Tool on your local workstation. This ensures that you have access to the Trucker command-line client, Foreman, and the Git revision control system.
+[Install trucker Command Line Tool](Getting-Started#install-trucker-command-line-tool) on your local workstation. This ensures that you have access to the Trucker command-line client, Foreman, and the Git revision control system.
 Once installed, you’ll have access to the trucker command from your command shell. Log in using the email address and password you used when creating your Trucker account:
 
 ```
-$ trucker login
+$ truck login
 email>
 password>
 ```
@@ -167,7 +167,7 @@ $ git commit -m "init"
 First perform a push command and enter your desired application name.
 
 ```
-$ trucker push
+$ truck push
 Name> trucker-test
 
 Instances> 1
@@ -245,7 +245,7 @@ You application is now available at http://trucker-test.trucker.io
 ## View the logs
 
 ```
-$ trucker logs
+$ truck logs
 ```
 
 ## Rails Console and Rake
@@ -255,7 +255,7 @@ $ trucker logs
 To use the Rails console with your database service, tunnel into the service, and choose 'none' when it asks you which client to start:
 
 ```
-$ cf tunnel trucker-test
+$ truck tunnel trucker-test
 
 Opening tunnel on port 10000... OK
 
@@ -320,15 +320,6 @@ If you’re still missing a gem when you deploy, check your Bundler groups. Truc
 One common example using the RSpec tasks in your `Rakefile`. If you see this in your Trucker deploy:
 
 ```
-$ trucker run rake -T
-Running `bundle exec rake -T` attached to terminal... up, ps.3
-rake aborted!
-no such file to load -- rspec/core/rake_task
-```
-
-Then you’ve hit this problem. First, duplicate the problem locally like so:
-
-```
 $ bundle install --without development:test
 ...
 $ bundle exec rake -T
@@ -336,7 +327,8 @@ rake aborted!
 no such file to load -- rspec/core/rake_task
 ```
 
-Now you can fix it by making these Rake tasks conditional on the gem load. For example:
+Then you’ve hit this problem.
+You can fix it by making these Rake tasks conditional on the gem load. For example:
 
 ### Rakefile
 
