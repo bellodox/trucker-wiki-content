@@ -1,3 +1,5 @@
+### Table of Contents
+
 * [[Local workstation setup|Nginx#local-workstation-setup]]
 * [[Custom configuration files|Nginx#custom-configuration-files]]
 * [[Deploy your application to Trucker|Nginx#deploy-your-application-to-trucker]]
