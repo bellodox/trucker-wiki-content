@@ -94,7 +94,19 @@ Binding trucker-test.trucker.io to trucker-test... OK
 You app will now be deployed, the output should look something like this:
 
 ```
-todo
+Creating trucker-test... OK
+
+Binding trucker-test.trucker.io to trucker-test... OK
+Uploading trucker-test... OK
+Preparing to start trucker-test... OK
+-----> Downloaded app package (360K)
+Initialized empty Git repository in /tmp/buildpacks/nginx-buildpack.git/.git/
+-----> Doing work with nginx-1.4.1 son.
+-----> Ensuring manifest.yml & stackato.yml aren't availble in public/
+-----> Uploading droplet (1.3M)
+Checking status of app 'trucker-test'....
+  1 of 1 instances running (1 running)
+Push successful! App 'trucker-test' available at trucker-test.trucker.io
 ```
 
 You application is now available at http://trucker-test.trucker.io
