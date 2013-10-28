@@ -18,3 +18,7 @@
     * [[Rails Console and Rake|Rails-3#rails-console-and-rake]]
     * [[Troubleshooting|Rails-3#rails-troubleshooting]]
   * [[Nginx|Nginx#nginx]]
+    * [[Local workstation setup|Nginx#local-workstation-setup]]
+    * [[Custom configuration files|Nginx#custom-configuration-files]]
+    * [[Deploy your application to Trucker|Nginx#deploy-your-application-to-trucker]]
+    * [[Example manifest file|Nginx#example-manifest-file]]
