@@ -59,9 +59,9 @@ http {
 
 **Push the application to Trucker.io**
 
-First perform a push command and enter your desired application name.
-
 It's important to include the `--buildpack https://github.com/GiMiScale/nginx-buildpack.git` after the `push` command, to use static HTML hosting on Trucker.io using Nginx.
+
+First perform a push command and enter your desired application name.
 
 ```
 $ truck push --buildpack https://github.com/GiMiScale/nginx-buildpack.git
