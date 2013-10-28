@@ -64,7 +64,7 @@ It's important to include the `--buildpack` after the `push` command, to use sta
 First perform a push command and enter your desired application name.
 
 ```
-$ truck push --buildpack https://github.com/GiMiScale/nginx-buildpack.git
+$ truck push --buildpack https://github.com/trucker/nginx-buildpack.git
 Name> trucker-test
 
 Instances> 1
@@ -124,6 +124,6 @@ applications:
   host: trucker-test
   domain: trucker.io
   path: .
-  buildpack: https://github.com/GiMiScale/nginx-buildpack.git
+  buildpack: https://github.com/trucker/nginx-buildpack.git
 
 ```
