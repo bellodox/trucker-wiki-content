@@ -17,3 +17,4 @@
     * [[View the logs|Rails-3#view-the-logs]]
     * [[Rails Console and Rake|Rails-3#rails-console-and-rake]]
     * [[Troubleshooting|Rails-3#rails-troubleshooting]]
+  * [[Nginx|Nginx#nginx]]

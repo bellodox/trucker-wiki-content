@@ -7,3 +7,6 @@
 * Node.js
 * PHP
 * Java
+* Static
+  * [[Nginx|Nginx]]
+  * Apache
