@@ -1,13 +1,13 @@
 ### Table of Contents
 
-* [[Local workstation setup|Nginx#local-workstation-setup]]
+* [[Local workstation setup|Nginx#local-workstation-setup-2]]
 * [[Custom configuration files|Nginx#custom-configuration-files]]
-* [[Deploy your application to Trucker|Nginx#deploy-your-application-to-trucker]]
+* [[Deploy your application to Trucker|Nginx#deploy-your-application-to-trucker-2]]
 * [[Example manifest file|Nginx#example-manifest-file]]
 
 This quickstart will get you going with hosting static HTML sites on Trucker.io using Nginx.
 
-## Local workstation setup
+## Local workstation setup<a name="local-workstation-setup-2"></a>
 
 [Install Trucker Command Line Tool](Getting-Started#install-trucker-command-line-tool) on your local workstation. This ensures that you have access to the Trucker command-line client, Foreman, and the Git revision control system.
 Once installed, you’ll have access to the trucker command from your command shell. Log in using the email address and password you used when creating your Trucker account:
@@ -55,7 +55,7 @@ http {
 }
 ```
 
-## Deploy your application to Trucker
+## Deploy your application to Trucker<a name="deploy-your-application-to-trucker-2"></a>
 
 **Push the application to Trucker.io**
 
