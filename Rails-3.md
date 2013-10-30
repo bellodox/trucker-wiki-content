@@ -255,7 +255,7 @@ $ truck logs
 To use the Rails console with your database service, tunnel into the service, and choose 'none' when it asks you which client to start:
 
 ```
-$ truck tunnel trucker-test
+$ truck tunnel cleardb-505d6
 
 Opening tunnel on port 10000... OK
 
