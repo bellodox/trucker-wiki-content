@@ -31,3 +31,8 @@
   * [[Custom configuration files|Nginx#custom-configuration-files]]
   * [[Deploy your application to Trucker|Nginx#deploy-your-application-to-trucker-2]]
   * [[Example manifest file|Nginx#example-manifest-file]]
+1. [[|]]
+  * [[Continuous Deployment|Continuous-Deployment]]
+  * [[Create a manifest yaml|Continuous-Deployment#create-a-manifest-yaml]]
+  * [[Continuous Deployment with Github and Travis CI|Continuous-Deployment#continuous-deployment-with-github-and-travis-ci]]
+  * [[Continuous Deployment with Github and Jenkins|Continuous-Deployment#continuous-deployment-with-github-and-jenkins]]
