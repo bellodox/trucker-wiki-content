@@ -298,13 +298,13 @@ $ RAILS_ENV=proxied-trucker bundle exec rake [command]
 ## Database migrations
 
 ### Rake command
-One options is to setup the proxied `RAILS_ENV` as mentioned above and perform a rake command.
+One option is to setup the proxied `RAILS_ENV` as mentioned above and perform a rake command.
 
 ```
 $ RAILS_ENV=proxied-trucker bundle exec rake db:migrate
 ```
 
-### Initializer
+### Initializer file
 
 It is possible to include your migration execution within a rails initializer when your application starts.
 
