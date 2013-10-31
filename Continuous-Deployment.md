@@ -104,51 +104,7 @@ Travis will then show log output similar to this:
 
 ```
 Installing deploy dependencies
-Fetching: addressable-2.3.5.gem (100%)
-Successfully installed addressable-2.3.5
-Fetching: multi_json-1.7.9.gem (100%)
-Successfully installed multi_json-1.7.9
-Fetching: caldecott-client-0.0.2.gem (100%)
-Successfully installed caldecott-client-0.0.2
-Fetching: i18n-0.6.5.gem (100%)
-Successfully installed i18n-0.6.5
-Fetching: tzinfo-0.3.37.gem (100%)
-Successfully installed tzinfo-0.3.37
-Fetching: minitest-4.7.5.gem (100%)
-Successfully installed minitest-4.7.5
-Fetching: atomic-1.1.13.gem (100%)
-Building native extensions.  This could take a while...
-Successfully installed atomic-1.1.13
-Fetching: thread_safe-0.1.2.gem (100%)
-Successfully installed thread_safe-0.1.2
-Fetching: activesupport-4.0.0.gem (100%)
-Successfully installed activesupport-4.0.0
-Fetching: builder-3.1.4.gem (100%)
-Successfully installed builder-3.1.4
-Fetching: activemodel-4.0.0.gem (100%)
-Successfully installed activemodel-4.0.0
-Fetching: cf-uaa-lib-2.0.0.gem (100%)
-Successfully installed cf-uaa-lib-2.0.0
-Fetching: multipart-post-1.2.0.gem (100%)
-Successfully installed multipart-post-1.2.0
-Fetching: rubyzip-0.9.9.gem (100%)
-Successfully installed rubyzip-0.9.9
-Fetching: cfoundry-4.3.6.gem (100%)
-Successfully installed cfoundry-4.3.6
-Fetching: interact-0.5.2.gem (100%)
-Successfully installed interact-0.5.2
-Fetching: json_pure-1.8.0.gem (100%)
-Successfully installed json_pure-1.8.0
-Fetching: mothership-0.5.1.gem (100%)
-Successfully installed mothership-0.5.1
-Fetching: mime-types-1.25.gem (100%)
-Successfully installed mime-types-1.25
-Fetching: rest-client-1.6.7.gem (100%)
-Successfully installed rest-client-1.6.7
-Fetching: uuidtools-2.1.4.gem (100%)
-Successfully installed uuidtools-2.1.4
-Fetching: cf-5.2.2.gem (100%)
-Successfully installed cf-5.2.2
+...
 22 gems installed
 dpl.2
 Preparing deploy
@@ -257,46 +213,7 @@ Using manifest file manifest.yml
 -----> Using Ruby version: ruby-1.9.3
 -----> Installing dependencies using Bundler version 1.3.2
        Running: bundle install --without development:test --path vendor/bundle --binstubs vendor/bundle/bin --deployment
-       Using rake (10.1.0)
-       Using i18n (0.6.5)
-       Using multi_json (1.8.2)
-       Using activesupport (3.2.15)
-       Using builder (3.0.4)
-       Using activemodel (3.2.15)
-       Using erubis (2.7.0)
-       Using journey (1.0.4)
-       Using rack (1.4.5)
-       Using rack-cache (1.2)
-       Using rack-test (0.6.2)
-       Using hike (1.2.3)
-       Using tilt (1.4.1)
-       Using sprockets (2.2.2)
-       Using actionpack (3.2.15)
-       Using mime-types (1.25)
-       Using polyglot (0.3.3)
-       Using treetop (1.4.15)
-       Using mail (2.5.4)
-       Using actionmailer (3.2.15)
-       Using arel (3.0.2)
-       Using tzinfo (0.3.38)
-       Using activerecord (3.2.15)
-       Using activeresource (3.2.15)
-       Using coffee-script-source (1.6.3)
-       Using execjs (2.0.2)
-       Using coffee-script (2.2.0)
-       Using rack-ssl (1.3.3)
-       Using json (1.8.1)
-       Using rdoc (3.12.2)
-       Using thor (0.18.1)
-       Using railties (3.2.15)
-       Using coffee-rails (3.2.2)
-       Using jquery-rails (3.0.4)
-       Using mysql2 (0.3.11)
-       Using bundler (1.3.2)
-       Using rails (3.2.15)
-       Using sass (3.2.12)
-       Using sass-rails (3.2.6)
-       Using uglifier (2.3.0)
+       ...
        Your bundle is complete! It was installed into ./vendor/bundle
        Cleaning up the bundler cache.
 -----> Writing config/database.yml to read from DATABASE_URL
