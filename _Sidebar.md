@@ -17,6 +17,7 @@
   * [[Rails Console and Rake|Rails-3#rails-console-and-rake]]
   * [[Database migrations|Rails-3#database-migrations]]
   * [[View the logs|Rails-3#view-the-logs]]
+  * [[Development mode|Rails-3#development-mode]]
   * [[Troubleshooting|Rails-3#rails-troubleshooting]]
 1. [[Nodejs|Nodejs]]
   * [[Activation|Nodejs#activation]]

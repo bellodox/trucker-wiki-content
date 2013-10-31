@@ -10,6 +10,7 @@
 * [[Rails Console and Rake|Rails-3#rails-console-and-rake]]
 * [[Database migrations|Rails-3#database-migrations]]
 * [[View the logs|Rails-3#view-the-logs]]
+* [[Development mode|Rails-3#development-mode]]
 * [[Troubleshooting|Rails-3#rails-troubleshooting]]
 
 This quickstart will get you going with Rails 3, deployed to Trucker. The latest version of Rails is Rails 4. If you’re starting a new app, you’ll probably want to use Getting Started with Rails 4. For Sinatra or other Ruby apps, please see Getting Started with Ruby on Trucker.
@@ -330,6 +331,22 @@ To tail your application log use:
 
 ```
 $ truck tail [app-name]
+```
+
+## Development mode
+
+You are able to force your application to use the development environment when running on Trucker.io. You can achieve this by setting the `RAILS_ENV` environment variable for your application:
+
+```
+truck set-env [application-name] RAILS_ENV=development
+```
+
+This can be very handy when debugging application or deployment errors.
+
+When you are finished with debugging your application you can reset the environment to production by deleting the `RAILS_ENV` variable again:
+
+```
+truck unset-env [application-name] RAILS_ENV
 ```
 
 ## Rails Troubleshooting
