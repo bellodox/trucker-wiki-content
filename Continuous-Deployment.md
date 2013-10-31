@@ -28,7 +28,7 @@ Go to your local app directory and create a `.travis.yml` file. At the moment, p
 
 ```
 language: ruby
-script: 'true'
+script: 'RAILS_ENV=test bundle exec rake test'
 ```
 
 Now your app contains the travis configuration but how should travis know when to pull your code from github and trigger test execution? This is where github hooks come into play.
@@ -73,7 +73,7 @@ After the travis command has finished, your `.travis.yml` could look like this:
 
 ```
 language: ruby
-script: 'true'
+script: 'RAILS_ENV=test bundle exec rake test'
 deploy:
   provider: cloudfoundry
   target: https://api.trucker.io
@@ -166,3 +166,146 @@ Logging out... OK
 This means your are done and good to go! Have fun with continuous deployment.
 
 ## Continuous Deployment with github and Jenkins
+
+First setup your Jenkins as normally.
+
+**Install after build plugin**
+
+Head over to the plugins section en search for the `Hudson Post build task`.
+http://wiki.hudson-ci.org/display/HUDSON/Post+build+task
+
+When the plugin is installed your ready to fire custom commands after the build step.
+
+**Update job configuration**
+
+1. Visit your job configuration screen
+1. Choose `Post build task` from the 'Add post-build action' dropdown menu
+1. Fill the **Log text field** with `0 failures, 0 errors`
+1. Now it's time for the script part
+
+**Post build script**
+
+Copy the contents of `~/.truck/tokens.yml` on your local machine. This is needed for later.
+
+```
+cat ~/.truck/tokens.yml
+```
+
+Fill the script textarea with:
+
+```
+#!/bin/bash
+
+[[ -d "${HOME}/.truck" ]] || mkdir -p "${HOME}/.truck"
+echo "http://api.trucker.io" >"${HOME}/.truck/target"
+cat <<'EOF' >"$HOME/.truck/tokens.yml"
+http://api.trucker.io:
+  :version: 2
+  :token: bearer 
+lOnGrAnDomStRiNg
+  :refresh_token: 
+lOnGrAnDomStRiNg
+  :space: ab12c3d4-5678-9efg-hij0-k1234mn567opq
+  :organization: ab12c3d4-5678-9efg-hij0-k1234mn567opq
+EOF
+gem install trucker-cli
+truck push
+```
+
+Save your new configurations
+
+**Test configuration**
+
+Fire up a new build. Follow the console.
+
+The output should look something like:
+
+```
+28 tests, 40 assertions, 0 failures, 0 errors, 0 skips
+Performing Post build task...
+Match found for :0 failures, 0 errors : True
+Logical operation result is TRUE
+Running script  : #!/bin/bash
+
+[[ -d "${HOME}/.truck" ]] || mkdir -p "${HOME}/.truck"
+echo "http://api.trucker.io" >"${HOME}/.truck/target"
+cat <<'EOF' >"$HOME/.truck/tokens.yml"
+http://api.trucker.io:
+  :version: 2
+  :token: bearer 
+lOnGrAnDomStRiNg
+  :refresh_token: 
+lOnGrAnDomStRiNg
+  :space: ab12c3d4-5678-9efg-hij0-k1234mn567opq
+  :organization: ab12c3d4-5678-9efg-hij0-k1234mn567opq
+EOF
+gem install trucker-cli
+truck push
+[trucker-travis] $ /bin/bash /tmp/hudson211628979674008472.sh
+Using manifest file manifest.yml
+
+-----> Downloaded app package (56K)
+-----> Downloaded app buildpack cache (13M)
+-----> Using Ruby version: ruby-1.9.3
+-----> Installing dependencies using Bundler version 1.3.2
+       Running: bundle install --without development:test --path vendor/bundle --binstubs vendor/bundle/bin --deployment
+       Using rake (10.1.0)
+       Using i18n (0.6.5)
+       Using multi_json (1.8.2)
+       Using activesupport (3.2.15)
+       Using builder (3.0.4)
+       Using activemodel (3.2.15)
+       Using erubis (2.7.0)
+       Using journey (1.0.4)
+       Using rack (1.4.5)
+       Using rack-cache (1.2)
+       Using rack-test (0.6.2)
+       Using hike (1.2.3)
+       Using tilt (1.4.1)
+       Using sprockets (2.2.2)
+       Using actionpack (3.2.15)
+       Using mime-types (1.25)
+       Using polyglot (0.3.3)
+       Using treetop (1.4.15)
+       Using mail (2.5.4)
+       Using actionmailer (3.2.15)
+       Using arel (3.0.2)
+       Using tzinfo (0.3.38)
+       Using activerecord (3.2.15)
+       Using activeresource (3.2.15)
+       Using coffee-script-source (1.6.3)
+       Using execjs (2.0.2)
+       Using coffee-script (2.2.0)
+       Using rack-ssl (1.3.3)
+       Using json (1.8.1)
+       Using rdoc (3.12.2)
+       Using thor (0.18.1)
+       Using railties (3.2.15)
+       Using coffee-rails (3.2.2)
+       Using jquery-rails (3.0.4)
+       Using mysql2 (0.3.11)
+       Using bundler (1.3.2)
+       Using rails (3.2.15)
+       Using sass (3.2.12)
+       Using sass-rails (3.2.6)
+       Using uglifier (2.3.0)
+       Your bundle is complete! It was installed into ./vendor/bundle
+       Cleaning up the bundler cache.
+-----> Writing config/database.yml to read from DATABASE_URL
+-----> Preparing app for Rails asset pipeline
+       Running: rake assets:precompile
+       Asset precompilation completed (37.48s)
+-----> Rails plugin injection
+       Injecting rails_log_stdout
+       Injecting rails3_serve_static_assets
+-----> Uploading droplet (35M)
+Checking status of app 'trucker-travis'...
+0 of 1 instances running (1 starting)
+1 of 1 instances running (1 running)
+Push successful! App 'trucker-travis' available at trucker-travis.trucker.io
+POST BUILD TASK : SUCCESS
+END OF POST BUILD TASK : 0
+Finished: SUCCESS
+```
+
+This means your are done and good to go! Have fun with continuous deployment.
