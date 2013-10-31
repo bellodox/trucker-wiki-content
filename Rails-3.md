@@ -7,8 +7,9 @@
 * [[Write your app|Rails-3#write-your-app]]
 * [[Store your app in Git|Rails-3#store-your-app-in-git]]
 * [[Deploy your application to Trucker|Rails-3#deploy-your-application-to-trucker]]
-* [[View the logs|Rails-3#view-the-logs]]
 * [[Rails Console and Rake|Rails-3#rails-console-and-rake]]
+* [[Database migrations|Rails-3#database-migrations]]
+* [[View the logs|Rails-3#view-the-logs]]
 * [[Troubleshooting|Rails-3#rails-troubleshooting]]
 
 This quickstart will get you going with Rails 3, deployed to Trucker. The latest version of Rails is Rails 4. If you’re starting a new app, you’ll probably want to use Getting Started with Rails 4. For Sinatra or other Ruby apps, please see Getting Started with Ruby on Trucker.
@@ -242,12 +243,6 @@ Push successful! App 'trucker-test' available at http://trucker-test.trucker.io
 
 You application is now available at http://trucker-test.trucker.io
 
-## View the logs
-
-```
-$ truck logs
-```
-
 ## Rails Console and Rake
 
 ### rails c
@@ -294,10 +289,47 @@ That's it, you now have a Rails console proxied to your Trucker database service
 
 ### rake
 
-Using the proxied environment you can now als perform `rake` commands.
+Using the proxied environment you can now also perform `rake` commands.
+
+```
+$ RAILS_ENV=proxied-trucker bundle exec rake [command]
+```
+
+## Database migrations
+
+### Rake command
+One options is to setup the proxied `RAILS_ENV` as mentioned above and perform a rake command.
 
 ```
 $ RAILS_ENV=proxied-trucker bundle exec rake db:migrate
+```
+
+### Initializer
+
+It is possible to include your migration execution within a rails initializer when your application starts.
+
+To follow this approach you have to create a new initializer file within the `config/initializers` directory. Let's call it `run_migrations.rb`.
+
+The file should contain the following line of code for executing the database migrations: 
+
+```
+ActiveRecord::Migrator.migrate(Rails.root.join("db/migrate"), nil)
+```
+
+And that's it. Next time migrations will be run automatically when you execute `truck push`.
+
+## View the logs
+
+To show the application log use the following command:
+
+```
+$ truck logs
+```
+
+To tail your application log use:
+
+```
+$ truck tail [app-name]
 ```
 
 ## Rails Troubleshooting
