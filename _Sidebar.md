@@ -26,6 +26,7 @@
   * [[Build behavior|Nodejs#build-behavior]]
   * [[Runtime behavior|Nodejs#runtime-behavior]]
   * [[Add-ons|Nodejs#add-ons]]
+1. [[PHP|PHP]]
 1. [[Nginx|Nginx]]
   * [[Local workstation setup|Nginx#local-workstation-setup-2]]
   * [[Custom configuration files|Nginx#custom-configuration-files]]
