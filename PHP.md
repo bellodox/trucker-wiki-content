@@ -1,3 +1,9 @@
+### Table of Contents
+
+* [[Persistent Data Storage|PHP#persistent-data-storage]]
+* [[Example application|PHP#example-application]]
+* [[Database connection|PHP#database-connection]]
+
 ## Persistent Data Storage
 
 Trucker.io does not yet have a persistent data storage system, though we're working on it. This means that the file system is volatile and any data that needs to be persistent should be included in the code base (by making all changes in a local development environment) or offloaded to a database or an external storage system like Amazon's S3.
@@ -38,7 +44,7 @@ truck push --buildpack https://github.com/iphoting/heroku-buildpack-php-tyler.gi
 truck push --buildpack https://github.com/heroku/heroku-buildpack-php.git
 ```
 
-## Mysql service
+## Database connection
 
 Simple example to connect you application with the Trucker.io mysql service
 
