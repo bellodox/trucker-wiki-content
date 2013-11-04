@@ -27,7 +27,7 @@
   * [[Runtime behavior|Nodejs#runtime-behavior]]
   * [[Add-ons|Nodejs#add-ons]]
 1. [[PHP|PHP]]
-  * [[Persistent Data Storage|PHP#persistent-data-storage]]
+  * [[Persistent data storage|PHP#persistent-data-storage]]
   * [[Example application|PHP#example-application]]
   * [[Database connection|PHP#database-connection]]
 1. [[Nginx|Nginx]]
