@@ -15,7 +15,7 @@ Setting up an 'empheral' deployment to play with Magnolia is very easy:
      2: 256M
      3: 512M
      4: 1G
-     Memory Limit> 256M
+     Memory Limit> 4
      
      Creating magnolia... OK
      
