@@ -36,7 +36,7 @@
   * [[Deploy your application to Trucker|Nginx#deploy-your-application-to-trucker-2]]
   * [[Example manifest file|Nginx#example-manifest-file]]
 1. [[Java]]
-  * [[Example: Magnolia]]
+  * [[Example: Magnolia|Java#magnolia]]
 1. [[Continuous Deployment|Continuous-Deployment]]
   * [[How does it work|Continuous-Deployment#how-does-it-work]]
   * [[Create a manifest yaml|Continuous-Deployment#create-a-manifest-yaml]]
