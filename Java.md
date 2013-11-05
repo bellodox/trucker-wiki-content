@@ -6,6 +6,19 @@ Java applications can be deployed to Trucker.io using the [Java buildpack](https
   * [Spring](http://spring.io/)
   * [[Tomcat|java#tomcat]]
 
+## Play
+
+A Play application will be detected if the Play runtime jar is found in the appropriate directory.
+
+### Example: Hello World
+
+First [download](http://downloads.typesafe.com/play/2.2.1/play-2.2.1.zip) an [install](http://www.playframework.com/documentation/latest/Installing) the Play Framework.
+
+```bash
+play new hello-play
+cd hello-play
+cf push --buildpack https://github.com/cloudfoundry/java-buildpack
+```
 ## Tomcat
 
 An application will be deployed in [Tomcat](http://tomcat.apache.org/) if the `WEB-INF` directory exists in the application root and no main class is detected.
