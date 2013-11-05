@@ -34,6 +34,22 @@ Setting up an 'empheral' deployment to play with Magnolia is very easy:
      Save configuration?> y
      
      Saving to manifest.yml... OK
+     Uploading magnolia... OK
+     Preparing to start magnolia... OK
+     -----> Downloaded app package (107M)
+     Initialized empty Git repository in /tmp/buildpacks/java-buildpack/.git/
+     -----> Downloading OpenJDK 1.7.0_45 from http://download.pivotal.io.s3.amazonaws.com/openjdk/lucid/x86_64/openjdk-1.7.0_45.tar.gz (7.0s)
+            Expanding JRE to .java (1.0s)
+     -----> Downloading Tomcat 7.0.47 from http://download.pivotal.io.s3.amazonaws.com/tomcat/tomcat-7.0.47.tar.gz (3.5s)
+            Expanding Tomcat to .tomcat (0.1s)
+     -----> Downloading Buildpack Tomcat Support 1.1.1 from http://download.pivotal.io.s3.amazonaws.com/tomcat-buildpack-support/tomcat-buildpack-support-1.1.1.jar (0.0s)
+     -----> Uploading droplet (144M)
+     Checking status of app 'magnolia'...
+       0 of 1 instances running (1 down)
+       ...
+       0 of 1 instances running (1 down)
+    Push unsuccessful.
+    TIP: The system will continue to attempt restarting all requested app instances that have crashed. Try 'cf app' to monitor app status. To troubleshoot crashes, try 'cf events' and 'cf crashlogs'.
      ```
 
 ## Additional Information
