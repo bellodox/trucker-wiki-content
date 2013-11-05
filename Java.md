@@ -3,7 +3,7 @@
 Setting up an 'empheral' deployment to play with Magnolia is very easy:
 
   1. Download the [Magnolia Tomcat Bundle](http://sourceforge.net/projects/magnolia/files/magnolia/Magnolia%20CE%205.1.1/magnolia-tomcat-bundle-5.1.1-tomcat-bundle.zip/download).
-  2. Extract the downloaded archive and cd into the`magnolia-5.1.1/apache-tomcat-7.0.40/webapps/magnoliaAuthor` folder.
+  2. Extract the downloaded archive and `cd` into the`magnolia-5.1.1/apache-tomcat-7.0.40/webapps/magnoliaAuthor` folder.
   3. Push it using the [Java buildpack](https://github.com/cloudfoundry/java-buildpack)!
      ```bash
      cf push --buildpack https://github.com/cloudfoundry/java-buildpack
@@ -36,3 +36,6 @@ Setting up an 'empheral' deployment to play with Magnolia is very easy:
      Saving to manifest.yml... OK
      ```
 
+## Additional Information
+
+  * http://blog.cloudfoundry.com/2013/09/06/introducing-the-cloud-foundry-java-buildpack/
