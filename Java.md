@@ -16,6 +16,10 @@ cf set-env <app name> JBP_LOG_LEVEL DEBUG
 
 A [Play](http://www.playframework.com/) application will be detected if the Play runtime jar is found in the appropriate directory.
 
+See:
+
+  * http://www.playframework.com/documentation/2.2.x/Deploying-CloudFoundry
+
 ### Example: Hello World
 
 First [download](http://downloads.typesafe.com/play/2.2.1/play-2.2.1.zip) an [install](http://www.playframework.com/documentation/latest/Installing) the Play Framework.
