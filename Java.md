@@ -23,11 +23,11 @@ Setting up an 'empheral' deployment to play with Magnolia is very easy:
      2: none
      Subdomain> magnolia
      
-     1: cfapps.io
+     1: ie.trucker.io
      2: none
-     Domain> cfapps.io
+     Domain> ie.trucker.io
      
-     Binding magnolia.cfapps.io to magnolia... OK
+     Binding magnolia.ie.trucker.io to magnolia... OK
      
      Create services for application?> n
      
@@ -47,9 +47,8 @@ Setting up an 'empheral' deployment to play with Magnolia is very easy:
      Checking status of app 'magnolia'...
        0 of 1 instances running (1 down)
        ...
-       0 of 1 instances running (1 down)
-    Push unsuccessful.
-    TIP: The system will continue to attempt restarting all requested app instances that have crashed. Try 'cf app' to monitor app status. To troubleshoot crashes, try 'cf events' and 'cf crashlogs'.
+       1 of 1 instances running (1 running)
+     Push successful! App 'magnolia' available at http://magnolia.ie.trucker.io
      ```
 
 ## Additional Information
