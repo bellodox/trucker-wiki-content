@@ -6,6 +6,12 @@ Java applications can be deployed to Trucker.io using the [Java buildpack](https
   * [Spring](http://spring.io/)
   * [[Tomcat|java#tomcat]]
 
+If you would like to debug the deployment of an application using the Java buildpack:
+
+```bash
+cf set-env <app name> JBP_LOG_LEVEL DEBUG
+```
+
 ## Play
 
 A [Play](http://www.playframework.com/) application will be detected if the Play runtime jar is found in the appropriate directory.
@@ -17,6 +23,9 @@ First [download](http://downloads.typesafe.com/play/2.2.1/play-2.2.1.zip) an [in
 ```bash
 play new hello-play
 cd hello-play
+play
+package
+exit
 cf push --buildpack https://github.com/cloudfoundry/java-buildpack
 ```
 ## Tomcat
