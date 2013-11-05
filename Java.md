@@ -28,7 +28,7 @@ First [download](http://downloads.typesafe.com/play/2.2.1/play-2.2.1.zip) an [in
 play new hello-play
 cd hello-play
 play dist
-cf push --buildpack https://github.com/cloudfoundry/java-buildpack --path cf push --path target/universal/hello-play-1.0-SNAPSHOT.zip
+cf push --buildpack https://github.com/cloudfoundry/java-buildpack --path target/universal/hello-play-1.0-SNAPSHOT.zip
 ```
 ## Tomcat
 
