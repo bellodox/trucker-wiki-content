@@ -2,13 +2,13 @@ Java applications can be deployed to Trucker.io using the [Java buildpack](https
 
   * [Groovy](http://groovy.codehaus.org/)
   * Java Main Class
-  * [Play](http://www.playframework.com/)
+  * [[Play|java#play]]
   * [Spring](http://spring.io/)
   * [[Tomcat|java#tomcat]]
 
 ## Play
 
-A Play application will be detected if the Play runtime jar is found in the appropriate directory.
+A [Play](http://www.playframework.com/) application will be detected if the Play runtime jar is found in the appropriate directory.
 
 ### Example: Hello World
 
