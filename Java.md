@@ -1,3 +1,11 @@
+Java applications can be deployed to Trucker.io using the [Java buildpack](https://github.com/cloudfoundry/java-buildpack). This buildpack supports:
+
+  * [Groovy](http://groovy.codehaus.org/)
+  * Java Main Class
+  * [Play](http://www.playframework.com/)
+  * [Spring](http://spring.io/)
+  * [Tomcat](http://tomcat.apache.org/)
+
 ## Example: Magnolia
 
 Setting up an 'empheral' deployment to play with Magnolia is very easy:
