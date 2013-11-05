@@ -4,9 +4,13 @@ Java applications can be deployed to Trucker.io using the [Java buildpack](https
   * Java Main Class
   * [Play](http://www.playframework.com/)
   * [Spring](http://spring.io/)
-  * [Tomcat](http://tomcat.apache.org/)
+  * [[Tomcat|java#tomcat]]
 
-## Example: Magnolia
+## Tomcat
+
+An application will be deployed in [Tomcat](http://tomcat.apache.org/) if the `WEB-INF` directory exists in the application root and no main class is detected.
+
+### Example: Magnolia
 
 Setting up an 'empheral' deployment to play with Magnolia is very easy:
 
