@@ -93,6 +93,41 @@ truck push --buildpack https://github.com/cloudfoundry/java-buildpack --path tar
 
 [Groovy](http://groovy.codehaus.org/)
 
+**main.groovy**:
+
+```groovy
+#!/usr/bin/env groovy
+import java.net.*
+try {
+  port = Integer.parseInt(System.getenv("PORT"))
+} catch (Exception e) {
+  port = 3000
+}
+
+counter = 0
+
+server = new ServerSocket(port)
+while(true) {
+  server.accept { socket ->
+    counter++
+
+    socket.withStreams { input, output ->
+      output.withWriter { writer ->
+        writer << "HTTP/1.1 200 OK\n"
+        writer << "Content-Type: text/html\n"
+        writer << "\n"
+        writer << "<html><head>"
+        writer << "<title>Hello World!</title>"
+        writer << "</head><body>"
+        writer << "<h1>Hello World!</h1>"
+        writer << "<p>This was request: " + counter + "</p>"
+        writer << "</body></html>"
+      }
+    }
+  }
+}
+```
+
 ## Main Class
 
 It is possible to run a custom Java application by specifying its `main` function. 
