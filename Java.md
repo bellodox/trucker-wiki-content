@@ -89,6 +89,11 @@ truck push --buildpack https://github.com/cloudfoundry/java-buildpack --path tar
 
 [Spring](http://spring.io/)
 
+```bash
+./gradlew build
+cf push --buildpack https://github.com/cloudfoundry/java-buildpack --path build/libs/yourapp-x.y.z.jar
+```
+
 ## Groovy
 
 [Groovy](http://groovy.codehaus.org/)
