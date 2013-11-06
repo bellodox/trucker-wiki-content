@@ -15,8 +15,6 @@
 
 This quickstart will get you going with Rails 3, deployed to Trucker. The latest version of Rails is Rails 4. If you’re starting a new app, you’ll probably want to use Getting Started with Rails 4. For Sinatra or other Ruby apps, please see Getting Started with Ruby on Trucker.
 
-**Persistent data storage**
-
 Trucker.io does not yet have a persistent data storage system, though we're working on it.
 [Read more](Limitations#persistent-data-storage)
 
