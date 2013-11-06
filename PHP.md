@@ -1,12 +1,10 @@
 ### Table of Contents
 
-* [[Persistent data storage|PHP#persistent-data-storage]]
 * [[Example application|PHP#example-application]]
 * [[Database connection|PHP#database-connection]]
 
-## Persistent data storage
-
-Trucker.io does not yet have a persistent data storage system, though we're working on it. [Read more](Limitations#persistent-data-storage)
+Trucker.io does not yet have a persistent data storage system, though we're working on it.
+[Read more](Limitations#persistent-data-storage)
 
 ## Example application
 
