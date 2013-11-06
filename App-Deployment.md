@@ -63,17 +63,15 @@ Binding trucker-test.trucker.io to trucker-test... OK
 
 Create services for application?> y
 
-1: blazemeter n/a, via blazemeter
-2: cleardb n/a, via cleardb
-3: cloudamqp n/a, via cloudamqp
-4: elephantsql n/a, via elephantsql
+1: mysql
+2: ...
 
-What kind?> 2
+What kind?> 1
 
-Name?> cleardb-505d6
+Name?> mysql-ab1234
 
-Creating service cleardb-505d6... OK
-Binding cleardb-505d6 to trucker-test... OK
+Creating service mysql-ab1234... OK
+Binding mysql-ab1234 to trucker-test... OK
 Create another service?> n
 
 Uploading trucker-test... OK
