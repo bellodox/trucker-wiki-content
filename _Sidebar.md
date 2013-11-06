@@ -11,7 +11,7 @@
   * [[Create a service instance|Services#Creating-service-instances]]
   * [[Binding a service instance to your application|Services#Binding-a-service-instance-to-your-application]]
   * [[Using service instances with your application|Services#Using-service-instances-with-your-application]]
-1. [[Environment-Variables|Environment-Variables]]
+1. [[Environment Variables|Environment-Variables]]
 1. [[Rails 3|Rails-3]]
   * [[Prerequisites|Rails-3#prerequisites]]
   * [[Local workstation setup|Rails-3#local-workstation-setup]]
