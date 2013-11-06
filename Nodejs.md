@@ -7,6 +7,9 @@
 * [[Runtime behavior|Nodejs#runtime-behavior]]
 * [[Add-ons|Nodejs#add-ons]]
 
+Trucker.io does not yet have a persistent data storage system, though we're working on it.
+[Read more](Limitations#persistent-data-storage)
+
 ### Activation
 
 The Trucker.io Node.js Support is applied only when the application has a package.json file in the root directory.
