@@ -1,92 +1,15 @@
 Java applications can be deployed to Trucker.io using the [Java buildpack](https://github.com/cloudfoundry/java-buildpack). This buildpack supports:
 
-  * [[Java Main Class|java#main-class]]
-  * [[Tomcat|java#tomcat]]
-  * [[Play|java#play]]
-  * [Spring](http://spring.io/)
-  * [Groovy](http://groovy.codehaus.org/)
-
+  * [Tomcat](#tomcat)
+  * [Play](#play)
+  * [Spring](#spring)
+  * [Groovy](#groovy)
+  * [Java Main Class](#main-class)
+  
 If you would like to debug the deployment of an application using the Java buildpack:
 
 ```bash
 truck set-env <app name> JBP_LOG_LEVEL DEBUG
-```
-
-## Main Class
-
-It is possible to run a custom Java application by specifying its `main` function. 
-
-**Server.java**:
-
-```
-import java.io.*;
-import java.net.*;
-
-public class Server {
-  public static final int BACKLOG = 10;
-
-    public static void main(String args[]) throws Throwable {
-        String portString = null;
-        int port;
-        ServerSocket s = null;
-        Socket conn = null;
-        PrintStream out = null;
-        BufferedReader in = null;
-        long counter = 0;
-
-        try {
-          portString = System.getenv("PORT");
-        } catch (Throwable e) {	
-        }
-
-        if (portString == null) {
-          portString = "8888";
-        }
-
-        System.out.println(portString);
-        port = Integer.parseInt(portString);
-       
-        s = new ServerSocket(port, Server.BACKLOG);
-          
-        while(true) {
-          conn = s.accept();
-          out = new PrintStream(conn.getOutputStream());
-          in = new BufferedReader(
-            new InputStreamReader(
-              conn.getInputStream()
-            )
-          );
-            
-          out.println("HTTP/1.0 200 OK");
-          out.println("Content-Type: text/html");
-          out.println();
-          out.println(
-            "<html><head>"
-            + "<title>Hello World!</title>"
-            + "</head><body>"
-            + "<h1>Hello World!</h1>"
-            + "<p>This was request: " + (++counter) + "</p>"
-            + "</body></html>"
-          );
-          
-          out.flush();
-          conn.close();
-        }
-    }
-}
-```
-
-Compile and create a jar:
-
-```bash
-javac Server.java
-jar cfe Server.jar Server Server.class
-```
-
-Deploy to Trucker.io:
-
-```bash
-truck push --buildpack https://github.com/cloudfoundry/java-buildpack --path Server.jar
 ```
 
 ## Tomcat
@@ -165,6 +88,87 @@ truck push --buildpack https://github.com/cloudfoundry/java-buildpack --path tar
 ## Spring
 
 [Spring](http://spring.io/)
+
+## Groovy
+
+[Groovy](http://groovy.codehaus.org/)
+
+## Main Class
+
+It is possible to run a custom Java application by specifying its `main` function. 
+
+**Server.java**:
+
+```
+import java.io.*;
+import java.net.*;
+
+public class Server {
+  public static final int BACKLOG = 10;
+
+    public static void main(String args[]) throws Throwable {
+        String portString = null;
+        int port;
+        ServerSocket s = null;
+        Socket conn = null;
+        PrintStream out = null;
+        BufferedReader in = null;
+        long counter = 0;
+
+        try {
+          portString = System.getenv("PORT");
+        } catch (Throwable e) {  
+        }
+
+        if (portString == null) {
+          portString = "8888";
+        }
+
+        System.out.println(portString);
+        port = Integer.parseInt(portString);
+       
+        s = new ServerSocket(port, Server.BACKLOG);
+          
+        while(true) {
+          conn = s.accept();
+          out = new PrintStream(conn.getOutputStream());
+          in = new BufferedReader(
+            new InputStreamReader(
+              conn.getInputStream()
+            )
+          );
+            
+          out.println("HTTP/1.0 200 OK");
+          out.println("Content-Type: text/html");
+          out.println();
+          out.println(
+            "<html><head>"
+            + "<title>Hello World!</title>"
+            + "</head><body>"
+            + "<h1>Hello World!</h1>"
+            + "<p>This was request: " + (++counter) + "</p>"
+            + "</body></html>"
+          );
+          
+          out.flush();
+          conn.close();
+        }
+    }
+}
+```
+
+Compile and create a jar:
+
+```bash
+javac Server.java
+jar cfe Server.jar Server Server.class
+```
+
+Deploy to Trucker.io:
+
+```bash
+truck push --buildpack https://github.com/cloudfoundry/java-buildpack --path Server.jar
+```
 
 ## Additional Information
 
