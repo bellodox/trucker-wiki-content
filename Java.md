@@ -128,6 +128,12 @@ while(true) {
 }
 ```
 
+And then just...
+
+```bash
+truck push --buildpack https://github.com/cloudfoundry/java-buildpack
+```
+
 ## Main Class
 
 It is possible to run a custom Java application by specifying its `main` function. 
