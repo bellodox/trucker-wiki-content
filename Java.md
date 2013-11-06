@@ -1,10 +1,10 @@
 Java applications can be deployed to Trucker.io using the [Java buildpack](https://github.com/cloudfoundry/java-buildpack). This buildpack supports:
 
-  * [Groovy](http://groovy.codehaus.org/)
-  * Java Main Class
+  * [[Java Main Class|java#main-class]]
+  * [[Tomcat|java#tomcat]]
   * [[Play|java#play]]
   * [Spring](http://spring.io/)
-  * [[Tomcat|java#tomcat]]
+  * [Groovy](http://groovy.codehaus.org/)
 
 If you would like to debug the deployment of an application using the Java buildpack:
 
@@ -12,19 +12,79 @@ If you would like to debug the deployment of an application using the Java build
 truck set-env <app name> JBP_LOG_LEVEL DEBUG
 ```
 
-## Play
+## Main Class
 
-The Java buildpack supports the [Play Framework](http://www.playframework.com/). In the following subsection is shown how to deploy a Play application.
+It is possible to run a custom Java application by specifying its `main` function. An example is given here, it consists of the following file:
 
-### Example: Hello World
+  * `config/main.yml`
+  * `Server.java`
 
-First [download](http://downloads.typesafe.com/play/2.2.1/play-2.2.1.zip) an [install](http://www.playframework.com/documentation/latest/Installing) the Play Framework.
+**config/main.yml**:
+
+```
+---
+java_main_class: Server
+```
+
+**Server.java**:
+
+```
+import java.io.*;
+import java.net.*;
+
+public class Server {
+  public static final int BACKLOG = 10;
+
+    public static void main(String args[]) throws Throwable {
+        String portString = null;
+        int port;
+        ServerSocket s = null;
+        Socket conn = null;
+        PrintStream out = null;
+        BufferedReader in = null;
+        long counter = 0;
+
+        try {
+        	portString = System.getenv("PORT");
+        } catch (Throwable e) {	
+        }
+
+        if (portString == null) {
+        	portString = "8888";
+        }
+
+        System.out.println(portString);
+        port = Integer.parseInt(portString);
+       
+        s = new ServerSocket(port, Server.BACKLOG);
+          
+        while(true) {
+          conn = s.accept();
+          out = new PrintStream(conn.getOutputStream());
+          in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            
+          out.println("HTTP/1.0 200 OK");
+          out.println("Content-Type: text/html");
+          out.println();
+          out.println("<html><head><title>Hello World!</title></head><body><h1>Hello World!</h1><p>This was request: " + (++counter) + "</p></body></html>");
+          out.flush();
+
+          conn.close();
+        }
+    }
+}
+```
+
+Compile the `Server` class:
 
 ```bash
-play new hello-play
-cd hello-play
-play dist
-truck push --buildpack https://github.com/cloudfoundry/java-buildpack --path target/universal/hello-play-1.0-SNAPSHOT.zip
+javac Server.java
+```
+
+Deploy to Trucker.io:
+
+```bash
+truck push --buildpack https://github.com/cloudfoundry/java-buildpack
 ```
 
 ## Tomcat
@@ -38,6 +98,7 @@ Setting up an 'empheral' deployment to play with Magnolia is very easy:
   1. Download the [Magnolia Tomcat Bundle](http://sourceforge.net/projects/magnolia/files/magnolia/Magnolia%20CE%205.1.1/magnolia-tomcat-bundle-5.1.1-tomcat-bundle.zip/download).
   2. Extract the downloaded archive and `cd` into the`magnolia-5.1.1/apache-tomcat-7.0.40/webapps/magnoliaAuthor` folder.
   3. Push it using the [Java buildpack](https://github.com/cloudfoundry/java-buildpack)!
+     
      ```bash
      truck push --buildpack https://github.com/cloudfoundry/java-buildpack
      Name> magnolia
@@ -83,6 +144,25 @@ Setting up an 'empheral' deployment to play with Magnolia is very easy:
        1 of 1 instances running (1 running)
      Push successful! App 'magnolia' available at http://magnolia.ie.trucker.io
      ```
+
+## Play
+
+The Java buildpack supports the [Play Framework](http://www.playframework.com/). In the following subsection is shown how to deploy a Play application.
+
+### Example: Hello World
+
+First [download](http://downloads.typesafe.com/play/2.2.1/play-2.2.1.zip) an [install](http://www.playframework.com/documentation/latest/Installing) the Play Framework.
+
+```bash
+play new hello-play
+cd hello-play
+play dist
+truck push --buildpack https://github.com/cloudfoundry/java-buildpack --path target/universal/hello-play-1.0-SNAPSHOT.zip
+```
+
+## Spring
+
+[Spring](http://spring.io/)
 
 ## Additional Information
 
