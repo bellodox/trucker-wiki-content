@@ -45,12 +45,12 @@ public class Server {
         long counter = 0;
 
         try {
-        	portString = System.getenv("PORT");
+          portString = System.getenv("PORT");
         } catch (Throwable e) {	
         }
 
         if (portString == null) {
-        	portString = "8888";
+          portString = "8888";
         }
 
         System.out.println(portString);
@@ -61,14 +61,25 @@ public class Server {
         while(true) {
           conn = s.accept();
           out = new PrintStream(conn.getOutputStream());
-          in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+          in = new BufferedReader(
+            new InputStreamReader(
+              conn.getInputStream()
+            )
+          );
             
           out.println("HTTP/1.0 200 OK");
           out.println("Content-Type: text/html");
           out.println();
-          out.println("<html><head><title>Hello World!</title></head><body><h1>Hello World!</h1><p>This was request: " + (++counter) + "</p></body></html>");
+          out.println(
+            "<html><head>"
+            + "<title>Hello World!</title>"
+            + "</head><body>"
+            + "<h1>Hello World!</h1>"
+            + "<p>This was request: " + (++counter) + "</p>"
+            + "</body></html>"
+          );
+          
           out.flush();
-
           conn.close();
         }
     }
