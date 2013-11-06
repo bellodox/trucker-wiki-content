@@ -90,10 +90,6 @@ When you run `truck push` interactively, it prompts you to supply a subdomain an
 The route created for the application as a result of the selections made below is:
 
 ```
-myapp.example.com
-```
-
-```
 truck push
 Name> myapp
 
