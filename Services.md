@@ -63,14 +63,14 @@ Which application?> 1
 Next you will be asked for the service instance you want to bind.
 
 ```
-1: cleardb-e2006
+1: mysql-a1234
 Which service?> 1
 ```
 
 If the service supports binding, your service instance will then be bound to your app.
 
 ```
-Binding cleardb-e2006 to myapp... OK
+Binding mysql-a1234 to myapp... OK
 ```
 
 ## Using service instances with your application
