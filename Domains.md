@@ -85,7 +85,7 @@ You might choose not to assign a subdomain to an application that will not accep
 When you run `truck push` interactively, it prompts you to supply a subdomain and domain for the application. In the example dialog below, note that the:
 
 * The options for subdomain are “myapp,” the value supplied earlier in the dialog for application name, and “none”. You can also enter a string at the prompt.
-* The options for domain are (1) `trucker.io`, the default domain for the Cloud Foundry instance, (2) `example.com`, a custom domain previously mapped to the space, and (3) “none”.
+* The options for domain are (1) `trucker.io`, the default domain for the Trucker instance, (2) `example.com`, a custom domain previously mapped to the space, and (3) “none”.
 
 The route created for the application as a result of the selections made below is:
 
