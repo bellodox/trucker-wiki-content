@@ -9,16 +9,12 @@ Java applications can be deployed to Trucker.io using the [Java buildpack](https
 If you would like to debug the deployment of an application using the Java buildpack:
 
 ```bash
-cf set-env <app name> JBP_LOG_LEVEL DEBUG
+truck set-env <app name> JBP_LOG_LEVEL DEBUG
 ```
 
 ## Play
 
-A [Play](http://www.playframework.com/) application will be detected if the Play runtime jar is found in the appropriate directory.
-
-See:
-
-  * http://www.playframework.com/documentation/2.2.x/Deploying-CloudFoundry
+The Java buildpack supports the [Play Framework](http://www.playframework.com/). In the following subsection is shown how to deploy a Play application.
 
 ### Example: Hello World
 
@@ -28,11 +24,11 @@ First [download](http://downloads.typesafe.com/play/2.2.1/play-2.2.1.zip) an [in
 play new hello-play
 cd hello-play
 play dist
-cf push --buildpack https://github.com/cloudfoundry/java-buildpack --path target/universal/hello-play-1.0-SNAPSHOT.zip
+truck push --buildpack https://github.com/cloudfoundry/java-buildpack --path target/universal/hello-play-1.0-SNAPSHOT.zip
 ```
 ## Tomcat
 
-An application will be deployed in [Tomcat](http://tomcat.apache.org/) if the `WEB-INF` directory exists in the application root and no main class is detected.
+The Java buildpack supports Java Servlets and JavaServer Pages using [Tomcat](http://tomcat.apache.org/). if the `WEB-INF` directory exists in the application root and no main class is detected.
 
 ### Example: Magnolia
 
@@ -42,7 +38,7 @@ Setting up an 'empheral' deployment to play with Magnolia is very easy:
   2. Extract the downloaded archive and `cd` into the`magnolia-5.1.1/apache-tomcat-7.0.40/webapps/magnoliaAuthor` folder.
   3. Push it using the [Java buildpack](https://github.com/cloudfoundry/java-buildpack)!
      ```bash
-     cf push --buildpack https://github.com/cloudfoundry/java-buildpack
+     truck push --buildpack https://github.com/cloudfoundry/java-buildpack
      Name> magnolia
      
      Instances> 1
