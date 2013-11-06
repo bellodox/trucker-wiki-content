@@ -14,17 +14,7 @@ truck set-env <app name> JBP_LOG_LEVEL DEBUG
 
 ## Main Class
 
-It is possible to run a custom Java application by specifying its `main` function. An example is given here, it consists of the following file:
-
-  * `config/main.yml`
-  * `Server.java`
-
-**config/main.yml**:
-
-```
----
-java_main_class: Server
-```
+It is possible to run a custom Java application by specifying its `main` function. 
 
 **Server.java**:
 
@@ -86,16 +76,17 @@ public class Server {
 }
 ```
 
-Compile the `Server` class:
+Compile and create a jar:
 
 ```bash
 javac Server.java
+jar cfe Server.jar Server Server.class
 ```
 
 Deploy to Trucker.io:
 
 ```bash
-truck push --buildpack https://github.com/cloudfoundry/java-buildpack
+truck push --buildpack https://github.com/cloudfoundry/java-buildpack --path Server.jar
 ```
 
 ## Tomcat
