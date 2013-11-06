@@ -38,7 +38,7 @@
   * [[Play|java#play]]
   * [[Spring|java#spring]]
   * [[Groovy|java#groovy]]
-  * [[Class|java#main-class]]
+  * [[Main Class|java#main-class]]
 1. [[Continuous Deployment|Continuous-Deployment]]
   * [[How does it work|Continuous-Deployment#how-does-it-work]]
   * [[Create a manifest yaml|Continuous-Deployment#create-a-manifest-yaml]]
