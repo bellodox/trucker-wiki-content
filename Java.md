@@ -3,14 +3,16 @@ Java applications can be deployed to Trucker.io using the [Java buildpack](https
   * [Tomcat](#tomcat)
   * [Play](#play)
   * [Spring](#spring)
-  * [Groovy](#groovy)
   * [Java Main Class](#main-class)
+  * [Groovy](#groovy)
   
 If you would like to debug the deployment of an application using the Java buildpack:
 
 ```bash
 truck set-env <app name> JBP_LOG_LEVEL DEBUG
 ```
+
+_For each example provided below, please work from within a newly created directory._
 
 ## Tomcat
 
@@ -94,54 +96,9 @@ truck push --buildpack https://github.com/cloudfoundry/java-buildpack --path tar
 truck push --buildpack https://github.com/cloudfoundry/java-buildpack --path build/libs/yourapp-x.y.z.jar
 ```
 
-## Groovy
-
-[Groovy](http://groovy.codehaus.org/)
-
-**main.groovy**:
-
-```groovy
-#!/usr/bin/env groovy
-import java.net.*
-try {
-  port = Integer.parseInt(System.getenv("PORT"))
-} catch (Exception e) {
-  port = 3000
-}
-
-counter = 0
-
-server = new ServerSocket(port)
-while(true) {
-  server.accept { socket ->
-    counter++
-
-    socket.withStreams { input, output ->
-      output.withWriter { writer ->
-        writer << "HTTP/1.1 200 OK\n"
-        writer << "Content-Type: text/html\n"
-        writer << "\n"
-        writer << "<html><head>"
-        writer << "<title>Hello World!</title>"
-        writer << "</head><body>"
-        writer << "<h1>Hello World!</h1>"
-        writer << "<p>This was request: " + counter + "</p>"
-        writer << "</body></html>"
-      }
-    }
-  }
-}
-```
-
-And then just...
-
-```bash
-truck push --buildpack https://github.com/cloudfoundry/java-buildpack
-```
-
 ## Main Class
 
-It is possible to run a custom Java application by specifying its `main` function. 
+It is possible to run a custom Java application by specifying a class with a `main` function. 
 
 **Server.java**:
 
@@ -214,6 +171,51 @@ Deploy to Trucker.io:
 
 ```bash
 truck push --buildpack https://github.com/cloudfoundry/java-buildpack --path Server.jar
+```
+
+## Groovy
+
+The Java buildpack supports [Groovy](http://groovy.codehaus.org/) out of the box. Just like above, where it is shown how to run the main method of a Java class, it is possible to run a Groovy application. A simple example is provided below.
+
+**main.groovy**:
+
+```groovy
+#!/usr/bin/env groovy
+import java.net.*
+try {
+  port = Integer.parseInt(System.getenv("PORT"))
+} catch (Exception e) {
+  port = 3000
+}
+
+counter = 0
+
+server = new ServerSocket(port)
+while(true) {
+  server.accept { socket ->
+    counter++
+
+    socket.withStreams { input, output ->
+      output.withWriter { writer ->
+        writer << "HTTP/1.1 200 OK\n"
+        writer << "Content-Type: text/html\n"
+        writer << "\n"
+        writer << "<html><head>"
+        writer << "<title>Hello World!</title>"
+        writer << "</head><body>"
+        writer << "<h1>Hello World!</h1>"
+        writer << "<p>This was request: " + counter + "</p>"
+        writer << "</body></html>"
+      }
+    }
+  }
+}
+```
+
+And then just...
+
+```bash
+truck push --buildpack https://github.com/cloudfoundry/java-buildpack
 ```
 
 ## Additional Information
