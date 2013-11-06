@@ -26,6 +26,7 @@ cd hello-play
 play dist
 truck push --buildpack https://github.com/cloudfoundry/java-buildpack --path target/universal/hello-play-1.0-SNAPSHOT.zip
 ```
+
 ## Tomcat
 
 The Java buildpack supports Java Servlets and JavaServer Pages using [Tomcat](http://tomcat.apache.org/). if the `WEB-INF` directory exists in the application root and no main class is detected.
