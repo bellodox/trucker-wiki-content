@@ -1,6 +1,6 @@
 ## Sign Up for An Account
 Before you can deploy your application, you will need an account on trucker.io.
-You can [sign up here](http://trucker.io) or sign up using the [Trucker Command Line Tool](Install-trucker-Command-Line-Tool).
+You can [sign up here](http://trucker.io) or sign up using the [[Trucker Command Line Tool|Install trucker Command Line Tool]].
 
 ### Sign up using the trucker CLI
 Target `truck` at the Cloud Controller for api.trucker.io:
