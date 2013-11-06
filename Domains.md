@@ -40,6 +40,36 @@ truck unmap-domain --space development example.com
 Unmapping example.com from development... OK
 ```
 
+## Map custom domain to application
+
+First make sure your custom domain is mapped to your space. 
+Map a custom domain to a space
+
+Map application with custom domain:
+
+```
+truck map myapp example.com
+
+Creating route .example.com... OK
+Binding .example.com to myapp... OK
+```
+
+You can also map www to your application:
+
+```
+truck map --app myapp --host www --domain example.com 
+
+Binding www.example.com to myapp... OK
+```
+
+### DNS settings
+
+To make the application available on the custom domain you will need to forward the domain to the correct CNAME. First create an `A` record entry for example.com to point to the CNAME that `api.trucker.io` resolves to (you can find this using `ping` or `nslookup`).
+
+Mapping `www` to your application can also be done. First create an `CNAME` record entry for example.com to point `www` to what `api.trucker.io` resolves to. It could be something like `run-trucker-elb-1234567890.eu-west-1.elb.amazonaws.com`.
+
+And that's it, your domain is now mapped to your application.
+
 ## Key Facts About Subdomains
 
 In some cases, defining the subdomain portion of a route is optional, but generally speaking this segment of a route is required to ensure that the route is unique. 
