@@ -2,9 +2,13 @@
 Trucker supports many frameworks and runtimes. Learn about the preparations for each below:
 
 ###RUNTIME  FRAMEWORK
-* **Javascript:** Node.js
-* **Java / JVM:** Java Spring, Grails, Scala Lift and Play
-* **Ruby:** Rack, Rails or Sinatra
+| Runtime        | Framework                                                                             |
+| :------------- | :-------------                                                                        |
+| Javascript     | [[Node.js|Nodejs]]                                                                    |
+| Java / JVM     | <li>[[Java Spring|Java]] <li>[[Grails|Java]] <li>[[Scala Lift|Java]] <li>[[Play|Java]]|
+| Ruby           | <li>[[Rails|Rails-3]] <li>[[Rack|Rack]] <li>[[Sinatra|Sinatra]]                       |
+| PHP            | [[PHP|PHP]]                                                                           |
+| Static Content | [[Nginx|Nginx]]                                                                       |
 
 Trucker supports these frameworks and runtimes using a buildpack model. Some of the Heroku third party buildpacks will work, but your experience may vary. To push an application using one of these buildpacks use `truck push [appname] --buildpack=[git url]`
 
