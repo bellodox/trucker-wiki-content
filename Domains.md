@@ -133,7 +133,7 @@ Getting routes... OK
 host                     domain
 
 myapp                    example.com 
-sinatra-hello-world      cfapps.io
+sinatra-hello-world      trucker.io
 ```
 
 ## Define or Change a Route from Command Line
