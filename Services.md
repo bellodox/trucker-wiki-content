@@ -8,8 +8,8 @@ Trucker Services are add-ons that can be provisioned alongside your application.
 
 In order to use services with your application you will need to:
 
-1. [Create a service instance](Services#creating-service-instances)
-1. [Binding a service instance to your application](Services#binding-a-service-instance-to-your-application)
+1. [Create a service instance](Services#Creating-service-instances)
+1. [Binding a service instance to your application](Services#Binding-a-service-instance-to-your-application)
 1. [Using service instances with your application](Services#Using-service-instances-with-your-application)
 
 ### Services vs. Service instances
