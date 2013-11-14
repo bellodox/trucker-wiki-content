@@ -195,5 +195,11 @@ class JConfig {
   ...
 }
 ```
+Copy the output of the command above, and create a configuration.php file that contains the Joomla configuration.
+Next delete the local installation folder, as it will not be further required:
+```bash
+$ rm -rf installation
+```
 
-
+The final step is to remove the currently pushed joomla application, and redeploy. This time, the Joomla configuration
+will be permanent.
