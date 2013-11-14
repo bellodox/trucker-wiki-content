@@ -186,7 +186,7 @@ scaled, Joomla will go through the installation process.
 
 **Before you remove the installation folder**, you will need to download the `configuration.php` file from Trucker:
 ```bash
-$ cf files joomla-test app/configuration.php
+$ truck files joomla-test app/configuration.php
 
 <?php
 class JConfig {
@@ -205,6 +205,6 @@ The final step is to remove the currently pushed joomla application, and redeplo
 will be permanent, and it will require no further configuration.
 
 ```bash
-$ cf delete -f joomla-test # The MySQL service is not deleted
-$ cf push 
+$ truck delete -f joomla-test # The MySQL service is not deleted
+$ truck push 
 ```
