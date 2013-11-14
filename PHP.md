@@ -202,4 +202,9 @@ $ rm -rf installation
 ```
 
 The final step is to remove the currently pushed joomla application, and redeploy. This time, the Joomla configuration
-will be permanent.
+will be permanent, and it will require no further configuration.
+
+```bash
+$ cf delete -f joomla-test # The MySQL service is not deleted
+$ cf push 
+```
