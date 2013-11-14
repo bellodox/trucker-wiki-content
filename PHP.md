@@ -166,10 +166,10 @@ $ truck curl get /v2/apps/9e0695bc-c5a9-4c55-b1a3-5cce3ee09805/service-bindings
   "app_guid": "9e0695bc-c5a9-4c55-b1a3-5cce3ee09805",
   "service_instance_guid": "e3f43673-3447-43bf-8f8b-c73abe7ea96b",
   "credentials": {
-    "jdbcUrl": "jdbc:mysql://b7ecce832f7130:addb767f@us-cdbr-east-04.cleardb.com:3306/ad_3ee916e51cdecd4",
-    "uri": "mysql://b7ecce832f7130:addb767f@us-cdbr-east-04.cleardb.com:3306/ad_3ee916e51cdecd4?reconnect=true",
+    "jdbcUrl": "jdbc:mysql://b7ecce832f7130:addb767f@mysqldb.cb1frtdjjo2d.eu-west-1.rds.amazonaws.com:3306/ad_3ee916e51cdecd4",
+    "uri": "mysql://b7ecce832f7130:addb767f@mysqldb.cb1frtdjjo2d.eu-west-1.rds.amazonaws.com:3306/ad_3ee916e51cdecd4?reconnect=true",
     "name": "ad_3ee916e51cdecd4",
-    "hostname": "us-cdbr-east-04.cleardb.com",
+    "hostname": "mysqldb.cb1frtdjjo2d.eu-west-1.rds.amazonaws.com",
     "port": "3306",
     "username": "b7ecce832f7130",
     "password": "addb767f"
