@@ -177,5 +177,5 @@ $ truck curl get /v2/apps/9e0695bc-c5a9-4c55-b1a3-5cce3ee09805/service-bindings
 ...        
 
 The installation procedure can then continue on the joomla web-UI:
-![Joomla Installation procedure](https://github.com/trucker/trucker-wiki-content/blob/joomla/images/joomla.png)
+![Joomla Installation procedure](images/joomla.png)
 
