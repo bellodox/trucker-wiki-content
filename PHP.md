@@ -180,5 +180,20 @@ $ truck curl get /v2/apps/9e0695bc-c5a9-4c55-b1a3-5cce3ee09805/service-bindings
 The installation procedure can then continue on the joomla web-UI:
 ![Joomla Installation procedure](images/joomla.png)
 
-The installation process has created some files in the deployed application container, but we need to make sure that these files are persisted. Without persisting these files, then everytime the application is restarted or scaled, Joomla will go through the installation process.
+The installation process has created some files in the deployed application container, but we need to make sure
+that these files are persisted. Without persisting these files, then everytime the application is restarted or 
+scaled, Joomla will go through the installation process.  
+
+**Before you remove the installation folder**, you will need to download the `configuration.php` file from Trucker:
+```bash
+$ cf files joomla-test app/configuration.php
+
+<?php
+class JConfig {
+	public $offline = '0';
+	public $offline_message = 'This site is down for maintenance.<br /> Please check back again soon.';
+  ...
+}
+```
+
 
