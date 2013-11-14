@@ -58,3 +58,83 @@ Simple example to connect you application with the Trucker.io mysql service
   $result = mysql_query($query) or die('Query failed');
 ?>
 ```
+
+## Joomla!
+The default heroku PHP buildpack is not sufficient to deploy Joomla! because of a missing Zlib dependency. Therefore, the iphoting php buildpack is used instead:
+
+```bash
+$ cf push --buildpack https://github.com/trucker/heroku-buildpack-php-tyler.git
+Name> joomla-test
+
+Instances> 1
+
+1: 128M
+2: 256M
+3: 512M
+4: 1G
+Memory Limit> 256M
+
+Creating joomla-test... OK
+
+1: joomla-test
+2: none
+Subdomain> joomla-test
+
+1: ie.trucker.io
+2: none
+Domain> ie.trucker.io
+
+Creating route joomla.ie.trucker.io... OK
+Binding joomla.ie.trucker.io to joomla... OK
+
+Create services for application?> y
+
+1: rds-mysql n/a, via aws
+What kind?> 1
+
+Name?> rds-mysql-8ba15
+
+1: 100mb: Shared service, 100MB storage, 10 connections
+Which plan?> 1
+
+Creating service rds-mysql-8ba15... OK
+Binding rds-mysql-8ba15 to joomla-test... OK
+Create another service?> n
+
+Bind other services to application?> n
+
+Save configuration?> y
+
+Saving to manifest.yml... OK
+Uploading joomla-test... OK
+Preparing to start joomla-test... OK
+-----> Downloaded app package (9.1M)
+Initialized empty Git repository in /tmp/buildpacks/heroku-buildpack-php-tyler.git/.git/
+-----> Fetching Manifest
+       https://s3.amazonaws.com/heroku-buildpack-php-tyler/manifest.md5sum
+-----> Installing Nginx
+       Bundling Nginx v1.4.1
+       https://s3.amazonaws.com/heroku-buildpack-php-tyler/nginx-1.4.1-heroku.tar.gz
+-----> Installing libmcrypt
+       Bundling libmcrypt v2.5.8
+       https://s3.amazonaws.com/heroku-buildpack-php-tyler/libmcrypt-2.5.8.tar.gz
+-----> Installing libmemcached
+       Bundling libmemcached v1.0.7
+       https://s3.amazonaws.com/heroku-buildpack-php-tyler/libmemcached-1.0.7.tar.gz
+-----> Installing PHP
+       Bundling PHP v5.4.17
+       https://s3.amazonaws.com/heroku-buildpack-php-tyler/php-5.4.17-with-fpm-heroku.tar.gz
+-----> Installing newrelic
+       Bundling newrelic daemon v2.9.5.78
+       https://s3.amazonaws.com/heroku-buildpack-php-tyler/newrelic-2.9.5.78-heroku.tar.gz
+-----> Copying config files
+-----> Installing boot script
+-----> Done with compile
+-----> Uploading droplet (43M)
+Checking status of app 'joomla-test'...
+  0 of 1 instances running (1 starting)
+  1 of 1 instances running (1 running)
+Push successful! App 'joomla-test' available at http://joomla-test.ie.trucker.io
+
+```
+
