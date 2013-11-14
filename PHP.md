@@ -63,7 +63,7 @@ Simple example to connect you application with the Trucker.io mysql service
 The default heroku PHP buildpack is not sufficient to deploy Joomla! because of a missing Zlib dependency. Therefore, the iphoting php buildpack is used instead:
 
 ```bash
-$ cf push --buildpack https://github.com/trucker/heroku-buildpack-php-tyler.git
+$ truck push --buildpack https://github.com/trucker/heroku-buildpack-php-tyler.git
 Name> joomla-test
 
 Instances> 1
@@ -135,6 +135,26 @@ Checking status of app 'joomla-test'...
   0 of 1 instances running (1 starting)
   1 of 1 instances running (1 running)
 Push successful! App 'joomla-test' available at http://joomla-test.ie.trucker.io
+```
 
+Joomla! should now be running. The next step involves setting it up through the browser. This process requires the database endpoint and credentials. They can be identified by performing the following steps:
+
+1. Find the globally unique identifier (GUID) of the application:
+```bash
+$ truck app -t joomla-test
+...
+  "entity": {
+    "app_guid": "9e0695bc-c5a9-4c55-b1a3-5cce3ee09805",
+    "service_instance_guid": "e3f43673-3447-43bf-8f8b-c73abe7ea96b",
+    "credentials": "[PRIVATE DATA HIDDEN]",
+    "binding_options": {
+    },
+    "gateway_data": {
+      "data": {
+        "binding_options": {
+        }
+      }
+    },
+...
 ```
 
