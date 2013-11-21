@@ -34,6 +34,7 @@
   * [[Example application|PHP#example-application]]
   * [[Database connection|PHP#database-connection]]
   * [[Joomla|PHP#joomla]]
+  * [[Drupal|PHP#drupal]]
 1. [[Static Nginx|Nginx]]
   * [[Local workstation setup|Nginx#local-workstation-setup-2]]
   * [[Custom configuration files|Nginx#custom-configuration-files]]
