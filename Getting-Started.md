@@ -4,6 +4,7 @@
 	- [Sign up using the trucker CLI](#markdown-header-sign-up-using-the-trucker-cli)
 	- [Login in using the Trucker CLI](#markdown-header-login-in-using-the-trucker-cli)
 - [Install Trucker Command Line Tool](#markdown-header-install-trucker-command-line-tool)
+
 ---
 
 ## Create An Account
