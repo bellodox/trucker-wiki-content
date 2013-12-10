@@ -5,7 +5,7 @@ This documentation should provide you with enough information to get started wit
 
 Table of contents
 ---
-1. [[Getting Started with Trucker]]
+1. [[Getting Started with Trucker|Getting Started]]
 
 1. [[Frequently Asked Questions]]
 
