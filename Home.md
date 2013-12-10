@@ -6,6 +6,8 @@ This documentation should provide you with enough information to get started wit
 Table of contents
 ---
 1. [[Getting Started with Trucker|Getting Started]]
+ 
+3. [[Trucker and CloudFoundry]]
 
 1. [[Frequently Asked Questions]]
 
