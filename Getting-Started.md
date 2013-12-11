@@ -2,8 +2,8 @@
 ---
 1. [**Table of Contents**](#table-of-contents)
 1. [Create An Account](#create-an-account)
-	1. [Sign up using the trucker CLI](#sign-up-using-the-trucker-cli)
-	1. [Login in using the Trucker CLI](#login-in-using-the-trucker-cli)
+	- [Sign up using the trucker CLI](#sign-up-using-the-trucker-cli)
+	- [Login in using the Trucker CLI](#login-in-using-the-trucker-cli)
 1. [Install Trucker Command Line Tool](#install-trucker-command-line-tool)
 
 ## Create An Account
