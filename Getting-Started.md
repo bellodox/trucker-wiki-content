@@ -3,7 +3,7 @@ Regardless of the type of application you want to deploy, you will need to perfo
 
 1. [[Create an Account|Getting Started#Create An Account]]
 2. [[Install-the-Command-Line-Tool]]
-3. [Log in]
+3. [Log in|Getting Started#Log in Trucker]]
 
 ## Create An Account
 To start using Trucker, you will need to sign up for an account, through [Trucker.io](https://trucker.io). 
@@ -30,14 +30,14 @@ $ truck register [email]
 You can deploy and manage your applications right from the terminal, by using the [trucker-cli command line tool](http://rubygems.org/gems/trucker-cli), which is our own flavor of the [CloudFoundry client](https://github.com/cloudfoundry/cf-docs/blob/master/source/docs/using/managing-apps/cf/index.html.md).
 
 Ruby and Rubygems are required to be present, since the `trucker-cli` tool is a Ruby gem. 
-See the [Installing Ruby](installing-ruby.md) page for help installing Ruby and RubyGems.
+[TODO] See the [Installing Ruby](installing-ruby) page for help installing Ruby and RubyGems.
 
-To install `trucker-cli`, simply type the following at your command line:
+To install `trucker-cli`, type:
 ```
 $ gem install trucker-cli
 ```
 
-
+## Log in Trucker
 ### Login in using the Trucker CLI
 ```
 $ truck login
