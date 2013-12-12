@@ -2,8 +2,8 @@
 Regardless of the type of application you want to deploy, you will need to perform the following steps, in order to get started with Trucker:
 
 1. [[Create an Account|Getting Started#Create An Account]]
-2. [[Install-the-Command-Line-Tool]]
-3. [Log in|Getting Started#Log in Trucker]]
+1. [[Install the Command Line Tool|Getting Started#Install the Command Line Tool]]
+1. [[Log in Trucker|Getting Started#Log in Trucker]]
 
 ## Create An Account
 To start using Trucker, you will need to sign up for an account, through [Trucker.io](https://trucker.io). 
