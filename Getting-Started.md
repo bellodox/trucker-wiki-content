@@ -1,11 +1,3 @@
-**Table of Contents**
----
-1. [**Table of Contents**](#table-of-contents)
-1. [Create An Account](#create-an-account)
-	- [Sign up using the trucker CLI](#sign-up-using-the-trucker-cli)
-	- [Login in using the Trucker CLI](#login-in-using-the-trucker-cli)
-1. [Install Trucker Command Line Tool](#install-trucker-command-line-tool)
-
 ## Create An Account
 To start using Trucker, you will need to sign up for an account, through [Trucker.io](https://trucker.io). Alternatively, you can create an account using the [[Trucker Command Line Tool|Getting Started#install-trucker-command-line-tool]].
 
