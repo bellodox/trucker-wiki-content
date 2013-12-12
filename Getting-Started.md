@@ -56,3 +56,6 @@ At this point, the trucker client will require that you choose a space to work i
 3: staging
 Space>
 ```
+
+## Next Steps
+Find out how you can deploy your application 
