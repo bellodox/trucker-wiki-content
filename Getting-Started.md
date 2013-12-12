@@ -14,13 +14,13 @@ Alternatively, you can create an account using the [[Trucker Command Line Tool|G
 ### Sign up using the trucker CLI
 Target `truck` at the Cloud Controller for api.trucker.io:
 
-```
+```bash
 $ truck target api.trucker.io
 Setting target to https://api.trucker.io... OK
 ```
 
 Create a user and login:
-```
+```bash
 $ truck register [email]
 ```
 -->
@@ -30,7 +30,6 @@ $ truck register [email]
 You can deploy and manage your applications right from the terminal, by using the [trucker-cli command line tool](http://rubygems.org/gems/trucker-cli), which is our own flavor of the [CloudFoundry client](https://github.com/cloudfoundry/cf-docs/blob/master/source/docs/using/managing-apps/cf/index.html.md).
 
 Ruby and Rubygems are required to be present, since the `trucker-cli` tool is a Ruby gem. 
-[TODO] See the [Installing Ruby](installing-ruby) page for help installing Ruby and RubyGems.
 
 To install `trucker-cli`, type:
 ```
@@ -38,30 +37,20 @@ $ gem install trucker-cli
 ```
 
 ## Log in Trucker
-### Login in using the Trucker CLI
-```
+
+You can create and manage applications using the  [Trucker control panel](https://cockpit.trucker.io). However you will need to also log in using the trucker command line client:
+
+```bash
+$ truck target https://api.ie.trucker.io
+Setting target to https://api.ie.trucker.io... OK
+
 $ truck login
 email>
 password>
 ```
 
-
-When the gem has completed installing you should see a message that says, "Successfully installed." You can now target `truck` at the Cloud Controller for api.trucker.io:
-
-```
-$ truck target api.trucker.io
-Setting target to https:/api.trucker.io... OK
-```
-
-Then log in:
-```
-$ truck login
-email>
-password>
-```
-
-When you log in, `truck` will prompt you to choose a space. In v2 Cloud Foundry, a space is a container for an application and all its associated processes. By default, your account has three spaces:
-```
+At this point, the trucker client will require that you choose a space to work in. Spaces are enviroments whose purpose is to organize your applications based on their lifecycle stage. Your trucker account comes equipped with the following spaces:
+```bash
 1: development
 2: production
 3: staging
