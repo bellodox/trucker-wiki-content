@@ -1,3 +1,10 @@
+## Overview
+Regardless of the type of application you want to deploy, you will need to perform the following steps, in order to get started with Trucker:
+
+1. [Create-An-Account]
+2. [Install-the-Command-Line-Tool]
+3. [Log in]
+
 ## Create An Account
 To start using Trucker, you will need to sign up for an account, through [Trucker.io](https://trucker.io). Alternatively, you can create an account using the [[Trucker Command Line Tool|Getting Started#install-trucker-command-line-tool]].
 
@@ -21,7 +28,7 @@ email>
 password>
 ```
 
-## Install Trucker Command Line Tool
+## Install the Command Line Tool
 You'll use the `truck` command line tool to deploy your application. You can also use it to check on the health of your application, change settings, and stop and restart your app.
 
 Because `trucker-cli` is a Ruby gem, you will need to have Ruby and RubyGems installed. See the [Installing Ruby](installing-ruby) page for help installing Ruby and RubyGems.
