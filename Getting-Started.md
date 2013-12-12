@@ -29,9 +29,7 @@ $ truck register [email]
 
 You can deploy and manage your applications right from the terminal, by using the [trucker-cli command line tool](http://rubygems.org/gems/trucker-cli), which is our own flavor of the [CloudFoundry client](https://github.com/cloudfoundry/cf-docs/blob/master/source/docs/using/managing-apps/cf/index.html.md).
 
-Ruby and Rubygems are required to be present, since the `trucker-cli` tool is a Ruby gem.
-
-Because `trucker-cli` is a Ruby gem, you will need to have Ruby and RubyGems installed. See the [Installing Ruby](installing-ruby) page for help installing Ruby and RubyGems.
+Ruby and Rubygems are required to be present, since the `trucker-cli` tool is a Ruby gem. See the [Installing Ruby](installing-ruby) page for help installing Ruby and RubyGems.
 
 To install `trucker-cli`, simply type the following at your command line:
 ```
