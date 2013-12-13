@@ -58,4 +58,4 @@ Space>
 ```
 
 ## Next Steps
-Find out how you can deploy your application 
+Find out how you can [deploy your application]
