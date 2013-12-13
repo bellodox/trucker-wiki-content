@@ -7,17 +7,20 @@ On its own, Trucker is framework- and Runtime-agnostic. It deploys applications 
 
 The buildpack model has been developed by Heroku, and it was made open-source, where it found the support of the CloudFoundry community. There are, therefore, many buildpacks that support a considerable amount of popular frameworks, and can be used out of the box with Trucker.
 
-The officially supported frameworks/runtimes are listed here:
-###RUNTIME  FRAMEWORK
-| Runtime        | Framework                                                                             |
-| :-------------:| :-------------:                                                                       |
-| Javascript     | [[Node.js|Nodejs]]                                                                    |
-| Java / JVM     | <li>[[Java Spring|Java]] <li>[[Grails|Java]] <li>[[Scala Lift|Java]] <li>[[Play|Java]]|
-| Ruby           | <li>[[Rails|Rails-3]] <li>[[Rack|Rack]] <li>[[Sinatra|Sinatra]]                       |
-| PHP            | [[PHP|PHP]]                                                                           |
-| Static Content | [[Nginx|Nginx]]                                                                       |
+The officially supported frameworks/runtimes are listed below:
 
-Besides these
+* Ruby: 
+  * [[Rails|Rails-3]] 
+  * [[Rack|Rack]]
+  * [[Sinatra|Sinatra]]
+* Java:
+  * [[Java Spring|Java]] 
+  * [[Grails|Java]] 
+  * [[Scala Lift|Java]] 
+  * [[Play|Java]]
+* Javascript: 
+  * [[Node.js|Nodejs]]
+
 Some of the Heroku third party buildpacks will work, but your experience may vary. To push an application using one of these buildpacks use `truck push [appname] --buildpack=[git url]`
 
 ## Push Your Application to the Cloud
