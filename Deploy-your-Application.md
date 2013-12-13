@@ -1,3 +1,6 @@
+## Prerequisites
+You have are logged in Trucker using the command line client. If not, see the [[Getting Started Guide|Getting-Started]].
+
 ## Framework and Runtime Support
 Trucker supports many frameworks and runtimes. Learn about the preparations for each below:
 
