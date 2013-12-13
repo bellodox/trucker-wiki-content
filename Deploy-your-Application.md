@@ -20,6 +20,8 @@ The officially supported frameworks/runtimes are listed below:
   * [[Play|Java]]
 * Javascript: 
   * [[Node.js|Nodejs]]
+ 
+Trucker will automatically detect applications that use any of the frameworks listed above.
 
 Some of the Heroku third party buildpacks will work, but your experience may vary. To push an application using one of these buildpacks use `truck push [appname] --buildpack=[git url]`
 
