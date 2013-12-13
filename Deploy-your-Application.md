@@ -3,19 +3,22 @@ You have are logged in Trucker using the command line client. If not, see the [[
 
 ## Framework and Runtime Support
 
-On its own, Trucker is framework- and Runtime-agnostic. It deploys applications using [[buildpacks]], which are packaged scripts that instruct the platform on how to stage applications using a specific Runtime/Framework. The buildpack model has been developed by Heroku, and it was made open-source, where it found the support of the CloudFoundry community. There are, therefore, many buildpacks that support a considerable amount of popular frameworks, and can be used out of the box with Trucker.
+On its own, Trucker is framework- and Runtime-agnostic. It deploys applications using [[buildpacks]], which are packaged scripts that instruct the platform on how to stage applications using a specific Runtime/Framework. 
 
-The officially supported buildpacks
+The buildpack model has been developed by Heroku, and it was made open-source, where it found the support of the CloudFoundry community. There are, therefore, many buildpacks that support a considerable amount of popular frameworks, and can be used out of the box with Trucker.
+
+The officially supported frameworks/runtimes are listed here:
 ###RUNTIME  FRAMEWORK
 | Runtime        | Framework                                                                             |
-| :------------- | :-------------                                                                        |
+| :-------------:| :-------------:                                                                       |
 | Javascript     | [[Node.js|Nodejs]]                                                                    |
 | Java / JVM     | <li>[[Java Spring|Java]] <li>[[Grails|Java]] <li>[[Scala Lift|Java]] <li>[[Play|Java]]|
 | Ruby           | <li>[[Rails|Rails-3]] <li>[[Rack|Rack]] <li>[[Sinatra|Sinatra]]                       |
 | PHP            | [[PHP|PHP]]                                                                           |
 | Static Content | [[Nginx|Nginx]]                                                                       |
 
-Trucker supports these frameworks and runtimes using a buildpack model. Some of the Heroku third party buildpacks will work, but your experience may vary. To push an application using one of these buildpacks use `truck push [appname] --buildpack=[git url]`
+Besides these
+Some of the Heroku third party buildpacks will work, but your experience may vary. To push an application using one of these buildpacks use `truck push [appname] --buildpack=[git url]`
 
 ## Push Your Application to the Cloud
 Before you deploy, you need to decide on the answers to some questions:
