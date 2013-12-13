@@ -2,8 +2,10 @@
 You have are logged in Trucker using the command line client. If not, see the [[Getting Started Guide|Getting-Started]].
 
 ## Framework and Runtime Support
-Trucker supports many frameworks and runtimes. Learn about the preparations for each below:
 
+On its own, Trucker is framework- and Runtime-agnostic. It deploys applications using [[buildpacks]], which are packaged scripts that instruct the platform on how to stage applications using a specific Runtime/Framework. The buildpack model has been developed by Heroku, and it was made open-source, where it found the support of the CloudFoundry community. There are, therefore, many buildpacks that support a considerable amount of popular frameworks, and can be used out of the box with Trucker.
+
+The officially supported buildpacks
 ###RUNTIME  FRAMEWORK
 | Runtime        | Framework                                                                             |
 | :------------- | :-------------                                                                        |
