@@ -31,7 +31,7 @@ On its own, Trucker is framework- and Runtime-agnostic. It deploys applications 
 
 The buildpack model has been developed by Heroku, and it was made open-source, where it found the support of the CloudFoundry community. There are, therefore, many buildpacks that support a considerable amount of popular frameworks, and can be used out of the box with Trucker.
 
-The officially supported frameworks/runtimes are listed below:
+Trucker **officially supports** the frameworks/runtimes listed below:
 
 * Ruby: 
   * [[Rails|Rails-3]] 
@@ -45,14 +45,28 @@ The officially supported frameworks/runtimes are listed below:
 * Javascript: 
   * [[Node.js|Nodejs]]
  
-Trucker will automatically detect applications that use any of the frameworks listed above.
+Trucker will automatically detect applications that use any of the frameworks listed above. 
 
-Some of the Heroku third party buildpacks will work, but your experience may vary. To push an application using one of these buildpacks use `truck push [appname] --buildpack=[git url]`
+#### Other Buildpacks
+
+If your application does not use any of the officially supported buildpacks, you might be able to find a suitable buildpack from the following sources:
+* [CloudFoundry community buildpacks](https://github.com/cloudfoundry-community/cf-docs-contrib/wiki/Buildpacks). 
+* [Heroku third-party buildpacks](https://devcenter.heroku.com/articles/third-party-buildpacks). It is not certain that these buildpacks will work on Trucker.
+
+To deploy your application with one of these buildpacks, you will have to explicitly specify the buildpack source, during deployment:
+```bash
+$ truck push [appname] --buildpack=[git url]
+```
+
+#### Create your own buildpack
+
+If there is no support for your application, you can ultimately [write your own buildpack!](https://github.com/cloudfoundry/cf-docs/blob/master/source/docs/using/deploying-apps/custom-buildpacks.html.md). 
+
 
 ### Push Your Application to the Cloud
-Before you deploy, you need to decide on the answers to some questions:
+Upon deployment of your application, the trucker command line client will ask you to provide some basic input regarding the application configuration:
 
-**Name:** You can use any series of alpha-numeric characters without spaces as the name of your application.
+**Name:** Your application name
 
 **Instances:** The number of instances you want running.
 
