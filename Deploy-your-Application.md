@@ -1,7 +1,29 @@
-## Prerequisites
+## Overview
+This section goes over the steps that are required in order to deploy your application, depending on the language and framework that it is using.
+
+In general, there are two ways of deploying an application with Trucker:
+* Use the [trucker command-line client].
+* Use the [trucker dashboard] to one-click deploy an application from a selection of runtimes and web-frameworks. We are striving towards adding more one-click-deploy applications in the dashboard. If you cannot find what you are looking for in the one-click deploy applications, you can always use the command-line client!
+ 
+The dashboard is currently in active development. It's main current objective is to offer you the ability to monitor your deployments and visualize data, rather than let you deploy applications (even though it is still capable of that). The [trucker command-line client] can be potentially used to deploy many more types of applications.
+
+## Using the trucker dashboard
+
+Several applications can be instantly launched through the [trucker dashboard], with the following steps:
+* Click 'Deploy new app'
+* Select an application type from the grid
+![Select Application Type]()
+* Type in a domain name for your application
+* Click 'Deploy'
+
+After your application is done being deployed, you will be able to configure it. From the dashboard, you can perform the following actions:
+* [Scale your application]
+* [Add services to your application]
+
+## Using the trucker command line client
 You have are logged in Trucker using the command line client. If not, see the [[Getting Started Guide|Getting-Started]].
 
-## Framework and Runtime Support
+### Framework and Runtime Support
 
 On its own, Trucker is framework- and Runtime-agnostic. It deploys applications using [[buildpacks]], which are packaged scripts that instruct the platform on how to stage applications using a specific Runtime/Framework. 
 
@@ -25,7 +47,7 @@ Trucker will automatically detect applications that use any of the frameworks li
 
 Some of the Heroku third party buildpacks will work, but your experience may vary. To push an application using one of these buildpacks use `truck push [appname] --buildpack=[git url]`
 
-## Push Your Application to the Cloud
+### Push Your Application to the Cloud
 Before you deploy, you need to decide on the answers to some questions:
 
 **Name:** You can use any series of alpha-numeric characters without spaces as the name of your application.
@@ -46,7 +68,7 @@ You can define a variety of deployment options on the command line when you run 
 * See the push section on "trucker Command Line Interface" for information about the `push` command and supplying qualifiers on the command line.
 * See the trucker Push and the Manifest section on "Application Manifests" for information about using an application manifest to supply deployment options.
 
-## An Example Transcript
+### An Example Transcript
 Here is an example transcript from deploying a Ruby on Rails application.
 
 ```
@@ -145,3 +167,8 @@ If your application has crashed and you cannot retrieve the logs with cf logs, y
 ```
 truck crashlogs appname
 ```
+
+
+[trucker dashboard]: http://dashboard.ie.trucker.io
+[trucker command-line client]: http://rubygems.org/gems/trucker
+[1]: http://rubygems.org/gems/trucker
