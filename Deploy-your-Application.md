@@ -73,7 +73,44 @@ $ truck push
 During the deployment, Trucker will request that you provide some configuration parameters:
 
 ```bash
-Name> myRoRApp #Can be 
+Name> HelloWorldApp #Can contain alphanumeric and special chars, except spaces.
+```
+
+```bash
+Instances> 1 #How many instances of your application do you need?
+
+1: 128M
+2: 256M 
+3: 512M
+4: 1G                           # You need to provide a memory limit for your application container. Applications that exceed
+Memory Limit> 512M              # this limit, are restarted, so make sure your application is provided with enough memory.
+
+Creating HelloWorldApp... OK
+
+1: HelloWorldApp
+2: none
+Subdomain> helloworldapp        # The subdomain where your application will be available at
+
+1: ie.trucker.io
+2: none                         # The combination of the subdomain and the domain configuration will be the endpoint of the
+Domain> ie.trucker.io           # application
+
+Creating route HelloWorldApp.ie.trucker.io... OK
+Binding HelloWorldApp.ie.trucker.io to myRoRApp... OK
+
+Create services for application?> n   # Does your application require a service (e.g, MySQL DB)?
+
+Bind other services to application?> n
+
+Save configuration?> y          # Save the configuration in 
+
+Saving to manifest.yml... OK
+Uploading myRoRApp... OK
+Preparing to start HelloWorldApp... OK
+Checking status of app 'HelloWorldApp'...
+  0 of 1 instances running (1 starting)
+  1 of 1 instances running (1 running)
+Push successful! App 'HelloWorldApp' available at helloworldapp.ie.trucker.io
 ```
 
 ## Choosing your deployment parameters
@@ -81,7 +118,6 @@ Name> myRoRApp #Can be
 Upon deployment of your application, the trucker command line client will ask you to provide some basic input regarding the application configuration:
 
 
-**Instances:** The number of instances you want running.
 
 **Memory Limit:** The maximum amount of memory that each instance of your application is allowed to consume. If an instance goes over the maximum limit, it will be restarted. If it has to be restarted too often, it will be terminated. So make sure you are generous in your memory limit.
 
