@@ -20,11 +20,7 @@ Several applications can be instantly launched through the [trucker dashboard], 
 ![Select Application Type](http://webfront.ie.trucker.io/assets/images/trucker-io-logo.png)
 * Click 'Deploy'
 
-After your application is done being deployed, you will be able to configure it. From the dashboard, you can perform the following actions:
-
-* [[Scale your application]]
-* [[Add services to your application]]
-* Edit the application domains
+After your application is done being deployed, you will be able to configure it. From the dashboard, you can perform  actions such as scaling your application, adding services to it (e.g, MySQL), or edit the application domains.
 
 ## Using the trucker command line client
 As a prerequisite, you need to be logged in Trucker using the command line client. If not, see the [[Getting Started Guide|Getting-Started]].
