@@ -63,10 +63,23 @@ $ truck push [appname] --buildpack=[git url]
 If there is no support for your application, you can ultimately [write your own buildpack!](https://github.com/cloudfoundry/cf-docs/blob/master/source/docs/using/deploying-apps/custom-buildpacks.html.md). 
 
 
-### Push Your Application to the Cloud
+### Deploy
+
+Simply push your application to Trucker:
+```bash
+$ truck push
+```
+
+During the deployment, Trucker will request that you provide some configuration parameters:
+
+```bash
+Name> myRoRApp #Can be 
+```
+
+## Choosing your deployment parameters
+
 Upon deployment of your application, the trucker command line client will ask you to provide some basic input regarding the application configuration:
 
-**Name:** Your application name
 
 **Instances:** The number of instances you want running.
 
