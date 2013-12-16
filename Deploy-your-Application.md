@@ -12,13 +12,16 @@ The dashboard is currently in active development. It's main current objective is
 Several applications can be instantly launched through the [trucker dashboard], with the following steps:
 * Click 'Deploy new app'
 * Select an application type from the grid
-![Select Application Type]()
+
+![Select Application Type](http://path/to/image.png)
+
 * Type in a domain name for your application
 * Click 'Deploy'
 
 After your application is done being deployed, you will be able to configure it. From the dashboard, you can perform the following actions:
 * [Scale your application]
 * [Add services to your application]
+* Edit the application domains
 
 ## Using the trucker command line client
 You have are logged in Trucker using the command line client. If not, see the [[Getting Started Guide|Getting-Started]].
