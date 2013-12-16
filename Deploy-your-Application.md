@@ -21,14 +21,15 @@ Several applications can be instantly launched through the [trucker dashboard], 
 * Click 'Deploy'
 
 After your application is done being deployed, you will be able to configure it. From the dashboard, you can perform the following actions:
-* [Scale your application]
-* [Add services to your application]
+
+* [[Scale your application]]
+* [[Add services to your application]]
 * Edit the application domains
 
 ## Using the trucker command line client
-You have are logged in Trucker using the command line client. If not, see the [[Getting Started Guide|Getting-Started]].
+As a prerequisite, you need to be logged in Trucker using the command line client. If not, see the [[Getting Started Guide|Getting-Started]].
 
-### Framework and Runtime Support
+### Does Trucker support my application?
 
 On its own, Trucker is framework- and Runtime-agnostic. It deploys applications using [[buildpacks]], which are packaged scripts that instruct the platform on how to stage applications using a specific Runtime/Framework. 
 
