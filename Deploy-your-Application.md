@@ -11,11 +11,13 @@ The dashboard is currently in active development. It's main current objective is
 
 Several applications can be instantly launched through the [trucker dashboard], with the following steps:
 * Click 'Deploy new app'
-* Select an application type from the grid
+* Select an application type from the grid menu:
 
-![Select Application Type](http://path/to/image.png)
+![Select Application Type](http://webfront.ie.trucker.io/assets/images/trucker-io-logo.png)
 
-* Type in a domain name for your application
+* Type in a domain name for your application:
+
+![Select Application Type](http://webfront.ie.trucker.io/assets/images/trucker-io-logo.png)
 * Click 'Deploy'
 
 After your application is done being deployed, you will be able to configure it. From the dashboard, you can perform the following actions:
