@@ -13,7 +13,8 @@ Several applications can be instantly launched through the [trucker dashboard], 
 * Click 'Deploy new app'
 * Select an application type from the grid
 
-![Select Application Type](http://path/to/image.png) { float: right; }
+![Select Application Type](http://path/to/image.png)
+
 * Type in a domain name for your application
 * Click 'Deploy'
 
