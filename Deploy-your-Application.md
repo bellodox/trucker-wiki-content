@@ -79,21 +79,21 @@ Name> HelloWorldApp #Can contain alphanumeric and special chars, except spaces.
 ```bash
 Instances> 1 #How many instances of your application do you need?
 
-1: 128M
-2: 256M 
-3: 512M
-4: 1G                           # You need to provide a memory limit for your application container. Applications that exceed
-Memory Limit> 512M              # this limit, are restarted, so make sure your application is provided with enough memory.
+1: 128M       # You need to provide a memory limit for your application container. 
+2: 256M       # Applications that exceed this limit, are restarted, so make  memory.
+3: 512M       # sure your application is provided with enough memory.
+4: 1G                            
+Memory Limit> 512M
 
 Creating HelloWorldApp... OK
 
 1: HelloWorldApp
 2: none
-Subdomain> helloworldapp        # The subdomain where your application will be available at
+Subdomain> helloworldapp    # The subdomain where your application will be available at
 
 1: ie.trucker.io
-2: none                         # The combination of the subdomain and the domain configuration will be the endpoint of the
-Domain> ie.trucker.io           # application
+2: none                   # The combination of the subdomain and the domain 
+Domain> ie.trucker.io     # configuration will be the endpoint of the application
 
 Creating route HelloWorldApp.ie.trucker.io... OK
 Binding HelloWorldApp.ie.trucker.io to myRoRApp... OK
@@ -102,7 +102,7 @@ Create services for application?> n   # Does your application require a service 
 
 Bind other services to application?> n
 
-Save configuration?> y          # Save the configuration in 
+Save configuration?> y   # Save the configuration in 
 
 Saving to manifest.yml... OK
 Uploading myRoRApp... OK
@@ -133,70 +133,6 @@ You can define a variety of deployment options on the command line when you run 
 * See the push section on "trucker Command Line Interface" for information about the `push` command and supplying qualifiers on the command line.
 * See the trucker Push and the Manifest section on "Application Manifests" for information about using an application manifest to supply deployment options.
 
-### An Example Transcript
-Here is an example transcript from deploying a Ruby on Rails application.
-
-```
-$ truck push
-Name> trucker-test
-
-Instances> 1
-
-1: 128M
-2: 256M
-3: 512M
-4: 1G
-Memory Limit> 256M
-
-Creating trucker-test... OK
-
-1: trucker-test
-2: none
-Subdomain> trucker-test
-
-1: trucker.io
-2: none
-Domain> trucker.io
-
-Creating route trucker-test.trucker.io... OK
-Binding trucker-test.trucker.io to trucker-test... OK
-
-Create services for application?> y
-
-1: mysql
-2: ...
-
-What kind?> 1
-
-Name?> mysql-ab1234
-
-Creating service mysql-ab1234... OK
-Binding mysql-ab1234 to trucker-test... OK
-Create another service?> n
-
-Uploading trucker-test... OK
-Preparing to start trucker-test... OK
------> Downloaded app package (40K)
------> Using Ruby version: ruby-1.9.3
------> Installing dependencies using Bundler version 1.3.2
-       Running: bundle install --without development:test --path vendor/bundle --binstubs vendor/bundle/bin --deployment
-       Fetching gem metadata from https://rubygems.org/..........
-       Fetching gem metadata from https://rubygems.org/..
-       Installing rake (10.1.0)
-       ...
-       Your bundle is complete! It was installed into ./vendor/bundle
------> Writing config/database.yml to read from DATABASE_URL
------> Preparing app for Rails asset pipeline
-       Running: rake assets:precompile
-       Asset precompilation completed (9.59s)
------> Rails plugin injection
-       Injecting rails_log_stdout
-       Injecting rails3_serve_static_assets
------> Uploading droplet (41M)
-Checking status of app 'trucker-test'...
-  1 of 1 instances running (1 running)
-Push successful! App 'trucker-test' available at http://trucker-test.trucker.io
-```
 
 ## Troubleshooting
 If your application does not start on Trucker, it's a good idea to double-check that your application can run locally.
