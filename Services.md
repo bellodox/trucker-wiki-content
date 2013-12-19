@@ -94,3 +94,62 @@ The procedure for configuring an application to connect to a service varies by f
 | Java / JVM            | <li>Spring <li>Grails <li>Lift | Supported. |
 | Ruby                  | <li>Rack, Rails, or Sinatra        | Supported only for Rails, with some limitations. | 
 | Javascript            | <li>Node.js | Not yet available in Trucker. |
+
+## Using Redis cache
+To create and bind a Redis cache to your application, you just need to follow the standard procedure for creating and binding a service. First, create the Redis service:
+```bash
+$ truck create-service redis
+Name?> redis-6413d
+
+1: default: Developer, 250MB storage, 10 connections
+Which plan?> 1
+
+Creating service redis-6413d... OK
+```
+
+Next, bind the service to an existing application:
+```bash
+$ truck bind-service redis-6413d
+1: app-using-redis
+Which application?> 1
+
+Binding redis-6413d to app-using-redis... OK
+```
+
+Finally, you will have to configure your application to use the Redis instance that has just been allocated and bound to it. The Redis endpoint and credentials can be accessed through the VCAP_SERVICES environment variable that is made available within your application.
+
+```json
+{
+  "redis-2.6": [
+    {
+      "name":"redis-6413d",
+      "label":"redis-2.6",
+      "plan":"default",
+      "credentials":{
+        "hostname":"10.10.33.2",
+        "port":5004,
+        "password":"a2395ad3-bc26-4fb0-72d8-8e0c7c2ce181",
+        "name":"e87927b5-f8c9-4ad1-96ab-36a9ccedd5ef"
+      }
+    }
+  ]
+}
+```
+
+As an example, here's how we can attach a **Ruby application** to the allocated Redis service instance:
+```ruby
+  require 'redis'
+  require 'json'
+  
+  redis_service ||= JSON.parse(ENV['VCAP_SERVICES']).find{|k,v| k.match(/redis/)}[1].first
+  redis_info = redis_service['credentials']
+
+  $redis_config = {
+    host:     redis_info['hostname'],
+    port:     redis_info['port'],
+    password: redis_info['password']
+  }
+  
+  $redis = Redis.new($redis_config)
+```
+The example above is using the [Redis Ruby Client](https://github.com/redis/redis-rb).
