@@ -161,7 +161,6 @@ $ truck app -t joomla-test
 ```bash
 $ truck curl get /v2/apps/9e0695bc-c5a9-4c55-b1a3-5cce3ee09805/service-bindings
 
-```bash
 ...
   "entity": {
   "app_guid": "9e0695bc-c5a9-4c55-b1a3-5cce3ee09805",
@@ -314,3 +313,48 @@ Push successful! App 'drupal-test' available at http://drupal-test.ie.trucker.io
 
 Drupal is now running, but the installation process needs to be completed. Point your browser to the installation script, 
 http://drupal-test.ie.trucker.io/install.php, and follow the instructions to complete the installation procedure.
+
+### Persistent Drupal filesystem in AWS S3
+
+Currently, Trucker has no support for persistent storage, and Drupal's file-system is based on local storage by default. As a result, any files saved while Drupal is running on Trucker will be lost when the instance is stopped. Moreover, if the drupal application is scaled out to several instances, the newly allocated instances will be missing all the files that were added to the CMS. 
+
+We therefore need to configure our Drupal application to use a cloud storage solution, such as Amazon Simple Storage Service (S3). We will need to install the [Amazon S3 module](https://drupal.org/project/amazons3) to Drupal. This Drupal configuration needs to happen **before** the application is pushed to Trucker, so that when we finally upload it to Trucker, it will already be configured to use Amazon S3. The process that we need to follow is described in the steps below:
+
+* Set up Drupal on localhost. We need to follow the [official guide](https://drupal.org/documentation/install) on how to set up our webserver and database. 
+* Next, we would like to install the [AmazonS3 plugin](https://drupal.org/project/amazons3). The plugin requires two more modules to be installed, the [libraries API](https://drupal.org/project/libraries) and the [AWS SDK for PHP](https://drupal.org/project/awssdk). Download these plugins, unzip them, and place them in sites/all/modules. You will also need to clone the repository git@github.com:aws/aws-sdk-php.git and place it in sites/all/libraries.
+* We have identified an issue with the AmazonS3 plugin, where the file paths are not properly formed. We will therefore need to edit profiles/standard/standard.install, and change the "uri_scheme" property of array "field", from "public" to "s3". If we already have an installed drupal application, we will have to change the value of "uri_scheme" from within the database, in table "field_config". After we have performed the change, we should make sure that the value of "uri_scheme" is not cached in table "cache_field".
+* We need to perform the Drupal installation through the browser (e.g., http://localhost/install.php), with the standard installation.
+* We will have to enable the installed modules (AWSSDK, libraries, AmazonS3) in admin/modules, and then configure them from admin/config. Namely, the AWSSDK plugin requires that we fill in the credentials of our AWS account, and AmazonS3 requires that we provide it with a bucket name (the bucket should already exist on S3).
+* We need to configure the drupal File-system in admin/config/media/file-system to use Amazon S3 as plugin. We have to change the Default download method to Amazon S3.
+
+Our local Drupal setup should now be using S3 as a filesystem. We proceed with uploading our application to Trucker:
+* We make sure that our settings.php file has the proper database configuration for trucker, as described above.
+* We push the application to trucker, as described above.
+* Finally, we have to upload our local drupal database contents to our Trucker database. The process requires that we dump our local db contents to a file, create a tunnel to the remote database through trucker, and upload the file contents to the remote database:
+```bash
+$ mysqldump local-drupal-db-name > drupal.sql
+```
+The remote database credentials can be retrieved when creating a tunnel to the service:
+
+```bash
+$ trucker tunnel name-of-database-service
+Opening tunnel on port 10000... OK
+
+Service connection info:
+  username : remote_user
+  password : remote_password
+  name     : remote_db_name
+  uri      : mysql://remote_user:remote_password@mysqldb.xxxxxxx.eu-west-1.rds.amazonaws.com:3306/remote_db_name
+
+Open another shell to run command-line clients or
+use a UI tool to connect using the displayed information.
+Press Ctrl-C to exit...
+```
+
+We can then populate the remote database:
+```bash
+$ mysql -uremote_user -p remote_db_name < drupal.sql
+Password: remote_password
+```
+
+Our remote DB should now have the drupal configuration and contents that we have performed locally, and our Drupal Application on trucker should now work with Amazon S3.
