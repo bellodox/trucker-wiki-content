@@ -120,7 +120,7 @@ Press Ctrl-C to exit...
 
 Next, create another database section in your `config/database.yml` file with the service connection info in the truck tunnel output:
 
-```yml
+```yaml
 proxied-trucker: 
   adapter: mysql2 
   database : ab_c123d45de67f890
