@@ -9,7 +9,7 @@ The dashboard is currently in active development. It's main current objective is
 
 ## Using the trucker dashboard
 
-Several applications can be instantly launched through the [trucker dashboard], with the following steps:
+The trucker dashboard is currently in active development. When it goes live, you will be able to use it to instantly launch several application types, with the following steps:
 * Click 'Deploy new app'
 * Select an application type from the grid menu
 * Type in a domain name for your application
