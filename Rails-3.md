@@ -120,7 +120,7 @@ Press Ctrl-C to exit...
 
 Next, create another database section in your `config/database.yml` file with the service connection info in the truck tunnel output:
 
-```
+```yaml
 proxied-trucker: 
   adapter: mysql2 
   database : ab_c123d45de67f890
@@ -132,7 +132,7 @@ proxied-trucker:
 
 Finally, in a another terminal, run `rails console`, passing in the database environment you created:
 
-```
+```bash
 $ RAILS_ENV=proxied-trucker bundle exec rails console
 ```
 
@@ -142,7 +142,7 @@ That's it, you now have a Rails console proxied to your Trucker database service
 
 Using the proxied environment you can now also perform `rake` commands.
 
-```
+```bash
 $ RAILS_ENV=proxied-trucker bundle exec rake [command]
 ```
 
@@ -151,7 +151,7 @@ $ RAILS_ENV=proxied-trucker bundle exec rake [command]
 ### Rake command
 One option is to setup the proxied `RAILS_ENV` as mentioned above and perform a rake command.
 
-```
+```bash
 $ RAILS_ENV=proxied-trucker bundle exec rake db:migrate
 ```
 
@@ -163,7 +163,7 @@ To follow this approach you have to create a new initializer file within the `co
 
 The file should contain the following line of code for executing the database migrations: 
 
-```
+```bash
 ActiveRecord::Migrator.migrate(Rails.root.join("db/migrate"), nil)
 ```
 
@@ -173,13 +173,13 @@ And that's it. Next time migrations will be run automatically when you execute `
 
 To show the application log use the following command:
 
-```
+```bash
 $ truck logs
 ```
 
 To tail your application log use:
 
-```
+```bash
 $ truck tail [app-name]
 ```
 
@@ -187,7 +187,7 @@ $ truck tail [app-name]
 
 You are able to force your application to use the development environment when running on Trucker.io. You can achieve this by setting the `RAILS_ENV` environment variable for your application:
 
-```
+```bash
 truck set-env [application-name] RAILS_ENV=development
 ```
 
@@ -195,6 +195,6 @@ This can be very handy when debugging application or deployment errors.
 
 When you are finished with debugging your application you can reset the environment to production by deleting the `RAILS_ENV` variable again:
 
-```
+```bash
 truck unset-env [application-name] RAILS_ENV
 ```
