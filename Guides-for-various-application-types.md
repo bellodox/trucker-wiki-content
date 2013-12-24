@@ -8,3 +8,8 @@ The [[application deployment guide|Deploy-your-Application]] has summarized the 
 | PHP     | [[Wordpress]]  | 
 |         | [[Drupal]] |
 |         | [[Joomla!]]|
+| Node.js | [[Express]]|
+|Java | [[Tomcat]]|
+| | [[Spring]]|
+| | [[Play]]
+| | [[Groovy]]
