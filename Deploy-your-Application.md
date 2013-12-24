@@ -113,9 +113,17 @@ Push successful! App 'HelloWorldApp' available at helloworldapp.ie.trucker.io
 Sometimes your application might fail to run on Trucker. In that case, first you will have to make sure that it runs on your local machine.
 
 Next step is to troubleshoot the application deployment on Trucker, using the command line client:
-```
-$ truck logs appname   # Show the stdout, stderr and environment logs of your application
-$ truck tail appname   # Tail the log files of your application as they are being read
+```bash
+$ truck logs appname   # Show the stdout, stderr and environment 
+                       # logs of your application
+                       
+Getting logs for appname #0... OK
+
+Reading logs/env.log... OK
+
+Reading logs/stderr.log... OK
+
+Reading logs/stdout.log... OK
 ```
 
 ```bash
@@ -126,11 +134,15 @@ appname: running
 ```
 
 ```bash
-$ track stats appname # Retrieve info on the resource usage of your app
+$ truck stats appname # Retrieve info on the resource usage of your app
 Getting stats for appname... OK
 
 instance   cpu    memory         disk
-#0         0.0%   5.1M of 128M   79.9M of 1G
+0         0.0%   5.1M of 128M   79.9M of 1G
+```
+
+```bash
+$ truck crashlogs appname # Show the logs of a crashed application instance
 ```
 
 To check how much memory your application is using:
