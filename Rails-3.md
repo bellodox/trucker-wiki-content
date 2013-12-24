@@ -1,16 +1,15 @@
 # Rails 3.x
 
-
-
-This quickstart will get you going with Rails 3, deployed to Trucker. The latest version of Rails is Rails 4. If you’re starting a new app, you’ll probably want to use Getting Started with Rails 4. For Sinatra or other Ruby apps, please see Getting Started with Ruby on Trucker.
-
+The aim of this guide is to walk you through the deployment of a Rails 3.x application. If you are starting with a new Rails project, we suggest that you follow our [[Rails 4]] guide.
 
 ### Prerequisites
 
-Basic Ruby/Rails knowledge, including an installed version of Ruby 2.0.0, Rubygems, Bundler, and Rails 3.
-Basic Git knowledge
-Your application must run on Ruby (MRI) 2.0.0.
-A Trucker user account. Signup is free and instant.
+Deploying a Rails app on Trucker requires a bit of basic knowledge on:
+
+* Ruby, Rubygems, Bundler, and of course Rails 3
+* Git SCM
+
+Additionally, you should have a Trucker account, have a look at our [[getting started]] section.
 
 ### Local workstation setup
 
