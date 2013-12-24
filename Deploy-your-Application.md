@@ -145,30 +145,6 @@ instance   cpu    memory         disk
 $ truck crashlogs appname # Show the logs of a crashed application instance
 ```
 
-To check how much memory your application is using:
-
-```
-truck stats appname
-```
-
-To see the environment variables and recent log entries:
-
-```
-truck logs appname
-```
-
-To tail your logs:
-
-```
-truck tail appname
-```
-
-If your application has crashed and you cannot retrieve the logs with cf logs, you can retrieve its dying words with:
-
-```
-truck crashlogs appname
-```
-
 
 [trucker dashboard]: http://dashboard.ie.trucker.io
 [trucker command-line client]: http://rubygems.org/gems/trucker
