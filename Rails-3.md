@@ -1,22 +1,9 @@
-# Rails 3
+# Rails 3.x
 
-### Table of Contents
 
-* [[Prerequisites|Rails-3#prerequisites]]
-* [[Local workstation setup|Rails-3#local-workstation-setup]]
-* [[Write your app|Rails-3#write-your-app]]
-* [[Store your app in Git|Rails-3#store-your-app-in-git]]
-* [[Deploy your application to Trucker|Rails-3#deploy-your-application-to-trucker]]
-* [[Rails Console and Rake|Rails-3#rails-console-and-rake]]
-* [[Database migrations|Rails-3#database-migrations]]
-* [[View the logs|Rails-3#view-the-logs]]
-* [[Development mode|Rails-3#development-mode]]
-* [[Troubleshooting|Rails-3#rails-troubleshooting]]
 
 This quickstart will get you going with Rails 3, deployed to Trucker. The latest version of Rails is Rails 4. If you’re starting a new app, you’ll probably want to use Getting Started with Rails 4. For Sinatra or other Ruby apps, please see Getting Started with Ruby on Trucker.
 
-Trucker.io does not yet have a persistent data storage system, though we're working on it.
-[Read more](Limitations#persistent-data-storage)
 
 ### Prerequisites
 
