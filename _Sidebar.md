@@ -18,7 +18,7 @@
   * [[Binding a service instance to your application|Services#Binding-a-service-instance-to-your-application]]
   * [[Using service instances with your application|Services#Using-service-instances-with-your-application]]
 1. [[Environment Variables|Environment-Variables]]
-1. [[Guides for various applications]]
+1. [[Guides for various application types]]
   * [[Rails 3]]
   * [[Nodejs|Nodejs]]
   * [[PHP simple app|PHP]] 
