@@ -1,3 +1,8 @@
+## Prerequisites
+
+You should have a Trucker account, the trucker command line client installed on your machine, and logged in the Trucker service. If not, have a look at our [[getting started]] section.
+
+## Deploy Joomla! Application
 
 The default heroku PHP buildpack is not sufficient to deploy Joomla! because of a missing Zlib dependency. Therefore, the iphoting php buildpack is used instead:
 
@@ -79,6 +84,7 @@ Push successful! App 'joomla-test' available at http://joomla-test.ie.trucker.io
 Joomla! should now be running. The next step involves setting it up through the browser. This process requires the database endpoint and credentials. They can be identified by performing the following steps:
 
 1. Find the globally unique identifier (GUID) of the application:
+
 ```bash
 $ truck app -t joomla-test
 ...
