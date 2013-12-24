@@ -3,13 +3,9 @@ The [[application deployment guide|Deploy-your-Application]] has summarized the 
 | Runtime | Framework/CMS |
 |:-------:|:---------:|
 | Ruby    | [[Ruby on Rails]] |
-|         | [[Sinatra]] |
-|         | [[Rack]] |
 | PHP     | [[Wordpress]]  | 
 |         | [[Drupal]] |
 |         | [[Joomla!]]|
 | Node.js | [[Express]]|
-|Java | [[Tomcat]]|
-| | [[Spring]]|
-| | [[Play]]
-| | [[Groovy]]
+|Java | [[Spring]] |
+| | [[Play]]|
