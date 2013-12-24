@@ -115,8 +115,6 @@ Service connection info:
   jdbcUrl  : jdbc:mysql://a1bc23d4567890:abcde1fg@ccdb.cb1a3tdjjo2d.eu-west-1.rds.amazonaws.com:3306/ab_c123d45de67f890
   uri      : mysql://a1bc23d4567890:abcde1fg@ccdb.cb1a3tdjjo2d.eu-west-1.rds.amazonaws.com:3306/ab_c123d45de67f890?reconnect=true
 
-Open another shell to run command-line clients or
-use a UI tool to connect using the displayed information.
 Press Ctrl-C to exit...
 ```
 
