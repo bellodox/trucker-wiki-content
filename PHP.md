@@ -1,24 +1,25 @@
-### Table of Contents
+This guide will walk you through deploying a simple php application on Trucker. It is a supplement to the [[deploy your application]] section of the documentation.
 
-* [[Example application|PHP#example-application]]
-* [[Database connection|PHP#database-connection]]
+Trucker does not automatically detect and use a buildpack for PHP applications, so you will just need to specify which buildpack to use during the application deployment. 
 
-Trucker.io does not yet have a persistent data storage system, though we're working on it.
-[Read more](Limitations#persistent-data-storage)
+### Prerequisites
 
-## Example application
+You should have a Trucker account, the trucker command line client installed on your machine, and logged in the Trucker service. If not, have a look at our [[getting started]] section.
 
-Create a directory for the app and `cd` into it
+## Example PHP application
+We are going to create a simple PHP application that provides us with the phpinfo page. 
+Create a directory for the app and `cd` into it:
 
 ```
-$ mkdir php-example
+$ mkdir phpinfo
 $ cd php-example
 ```
 
 Create an `index.php` file with the following
 
-```
-<?php echo "Hello world!"; ?>
+```php
+<?php 
+  phpinfo();
 ```
 
 ### Deploy example application
