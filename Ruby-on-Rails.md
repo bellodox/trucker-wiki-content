@@ -4,11 +4,7 @@ The aim of this guide is to walk you through the deployment of a [Ruby on Rails]
 
 ### Prerequisites
 
-Deploying a Rails app on Trucker requires a bit of basic knowledge on:
-
-* Ruby, Rubygems, Bundler, and of course Rails 3
-* Git SCM
-
+Deploying a Rails app on Trucker requires a bit of basic knowledge on Ruby, Rubygems, Bundler, and of course Rails 3.
 Additionally, you should have a Trucker account, the trucker command line client installed on your machine, and logged in the Trucker service. If not, have a look at our [[getting started]] section.
 
 ## Deploy your application to Trucker
