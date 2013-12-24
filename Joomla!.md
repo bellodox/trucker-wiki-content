@@ -1,3 +1,5 @@
+This guide should walk you through deploying a Joomla! application, on Trucker. It is meant as a supplement to the [[deploy your application]] section.
+
 ## Prerequisites
 
 You should have a Trucker account, the trucker command line client installed on your machine, and logged in the Trucker service. If not, have a look at our [[getting started]] section.
