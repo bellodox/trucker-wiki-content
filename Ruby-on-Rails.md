@@ -1,6 +1,7 @@
 # Rails 3.x
 
 The aim of this guide is to walk you through the deployment of a [Ruby on Rails](http://rubyonrails.org/) application. It is provided as an addendum to the [[Deploy your Application]] guide.
+
 ### Prerequisites
 
 Deploying a Rails app on Trucker requires a bit of basic knowledge on:
