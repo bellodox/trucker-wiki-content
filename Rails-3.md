@@ -16,7 +16,7 @@ Additionally, you should have a Trucker account, the trucker command line client
 
 First perform a push command and enter your desired application name.
 
-```
+```bash
 $ truck push
 Name> trucker-test
 
@@ -70,7 +70,7 @@ Uploading trucker-rails
 
 You app will now be deployed, the output should look something like this:
 
-```
+```bash
 Uploading trucker-test... OK
 Preparing to start trucker-test... OK
 -----> Downloaded app package (40K)
@@ -101,9 +101,9 @@ You application is now available at http://trucker-test.trucker.io
 
 ### rails c
 
-To use the Rails console with your database service, tunnel into the service, and choose 'none' when it asks you which client to start:
+To use the Rails console with your database service, you will have to create a tunnel to the service, and choose 'none' when it asks you which client to start:
 
-```
+```bash
 $ truck tunnel rds-mysql-aa0d6
 
 Opening tunnel on port 10000... OK
@@ -114,7 +114,6 @@ Service connection info:
   name     : ab_c123d45de67f890
   jdbcUrl  : jdbc:mysql://a1bc23d4567890:abcde1fg@ccdb.cb1a3tdjjo2d.eu-west-1.rds.amazonaws.com:3306/ab_c123d45de67f890
   uri      : mysql://a1bc23d4567890:abcde1fg@ccdb.cb1a3tdjjo2d.eu-west-1.rds.amazonaws.com:3306/ab_c123d45de67f890?reconnect=true
-
 
 Open another shell to run command-line clients or
 use a UI tool to connect using the displayed information.
