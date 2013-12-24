@@ -108,36 +108,29 @@ Checking status of app 'HelloWorldApp'...
 Push successful! App 'HelloWorldApp' available at helloworldapp.ie.trucker.io
 ```
 
-## Choosing your deployment parameters
+## When your app fails to start
 
-Upon deployment of your application, the trucker command line client will ask you to provide some basic input regarding the application configuration:
+Sometimes your application might fail to run on Trucker. In that case, first you will have to make sure that it runs on your local machine.
 
-
-
-**Memory Limit:** The maximum amount of memory that each instance of your application is allowed to consume. If an instance goes over the maximum limit, it will be restarted. If it has to be restarted too often, it will be terminated. So make sure you are generous in your memory limit.
-
-**Start Command:** This is the command that Trucker will use to start each instance of your application. The start command is specific to your framework.
-* If you do not specify a start command when you push the application, Trucker will use the value of the `web` key in the `procfile` for the application, if it exists; failing that, Trucker will start the application using the value of the buildpack's web attribute of `default_process_types`.
-
-**URL and Domain:** `truck` will prompt you for both a URL and a domain. The URL is the subdomain for your application and it will be hosted at the primary domain you choose. The combination of the URL and domain must be globally unique.
-
-**Services:** `truck` will ask you if you want to create and bind one or more services such as MySQL or Redis to your application. For the purposes of this guide, you can answer no when prompted to add a service. Services are addressed in the next guide, Adding a Service.
-
-You can define a variety of deployment options on the command line when you run `truck push`, or in a manifest file. For more information:
-
-* See the push section on "trucker Command Line Interface" for information about the `push` command and supplying qualifiers on the command line.
-* See the trucker Push and the Manifest section on "Application Manifests" for information about using an application manifest to supply deployment options.
-
-
-## Troubleshooting
-If your application does not start on Trucker, it's a good idea to double-check that your application can run locally.
-
-You can troubleshoot your application in the cloud using `truck`.
-
-To check the health of your application, use
-
+Next step is to troubleshoot the application deployment on Trucker, using the command line client:
 ```
-truck health appname
+$ truck logs appname   # Show the stdout, stderr and environment logs of your application
+$ truck tail appname   # Tail the log files of your application as they are being read
+```
+
+```bash
+$ truck health appname # Is your application running?
+Getting health status... OK
+
+appname: running
+```
+
+```bash
+$ track stats appname # Retrieve info on the resource usage of your app
+Getting stats for appname... OK
+
+instance   cpu    memory         disk
+#0         0.0%   5.1M of 128M   79.9M of 1G
 ```
 
 To check how much memory your application is using:
