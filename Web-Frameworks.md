@@ -2,9 +2,9 @@ The [[application deployment guide|Deploy-your-Application]] has summarized the 
 
 | Runtime | Framework/CMS |
 |:-------:|:---------:|
-| Ruby    | Ruby on Rails 3 |
-|         | Sinatra |
-|         | Rack |
-| PHP     | Wordpress  | 
-|         | Drupal |
-|         | Joomla!|
+| Ruby    | [[Ruby on Rails 3]] |
+|         | [[Sinatra]] |
+|         | [[Rack]] |
+| PHP     | [[Wordpress]]  | 
+|         | [[Drupal]] |
+|         | [[Joomla!]]|
