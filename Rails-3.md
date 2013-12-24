@@ -1,7 +1,6 @@
 # Rails 3.x
 
-The aim of this guide is to walk you through the deployment of a Rails 3.x application. If you are starting with a new Rails project, we suggest that you follow our [[Rails 4]] guide.
-
+The aim of this guide is to walk you through the deployment of a [Ruby on Rails](http://rubyonrails.org/) application. It is provided as an addendum to the [[Deploy your Application]] guide.
 ### Prerequisites
 
 Deploying a Rails app on Trucker requires a bit of basic knowledge on:
@@ -9,147 +8,7 @@ Deploying a Rails app on Trucker requires a bit of basic knowledge on:
 * Ruby, Rubygems, Bundler, and of course Rails 3
 * Git SCM
 
-Additionally, you should have a Trucker account, have a look at our [[getting started]] section.
-
-### Local workstation setup
-
-[Install Trucker Command Line Tool](Getting-Started#install-trucker-command-line-tool) on your local workstation. This ensures that you have access to the Trucker command-line client, Foreman, and the Git revision control system.
-Once installed, you’ll have access to the trucker command from your command shell. Log in using the email address and password you used when creating your Trucker account:
-
-```
-$ truck login
-email>
-password>
-```
-
-We highly recommend using Mysql during development. Maintaining parity between your development and deployment environments prevents subtle bugs from being introduced because of differences between your environments.
-
-## Write your app
-
-### New App
-
-You may be starting from an existing app. If not, a vanilla Rails 3 app will serve as a suitable sample app:
-
-```
-$ rails new trucker-test
-$ cd trucker-test
-```
-
-### Existing App
-
-Ruby on Rails app deployments on Trucker automatically recognize MySQL.
-
-Make sure to use the correct version of the MySQL2 gem in your Gemfile:
-
-**Rails 3.0**
-
-```
-# If you use a different database in development, hide it from Trucker
-group :development do
-  gem 'sqlite3'
-end
-# Rails 3.0 requires version less than 0.3 of mysql2 gem
-group :production do
-  gem 'mysql2', '< 0.3'
-end
-```
-
-**Rails 3.1.x**
-
-```
-# If you use a different database in development, hide it from Trucker
-group :development do
-  gem 'sqlite3'
-end
-# Rails 3.1 can use the latest mysql2 gem.
-group :production do
-  gem 'mysql2'
-end
-```
-
-In addition to using the `mysql2` gem, you'll also need to ensure the `config/database.yml` is using the `mysql2` adapter and not `sqlite3`. Your `config/database.yml` file should look something like this:
-
-```
-development:
-  adapter: sqlite3
-  database: db/development.sqlite3
-  pool: 5
-  timeout: 5000
-
-test:
-  adapter: sqlite3
-  database: db/test.sqlite3
-  pool: 5
-  timeout: 5000
-
-production:
-  adapter: mysql2
-  encoding: utf8
-  database: 
-  pool: 5
-  username: 
-  password:
-```
-
-And re-install your dependencies (to generate a new `Gemfile.lock`):
-
-```
-$ bundle install
-```
-
-### Setting up the Asset Pipeline
-
-Rails 3.1 introduced the Asset Pipeline to concatenate and minify or compress JavaScript and CSS assets. Trucker has a step in the build process to precompile your assets into your slug, so they’re readily available. To speed up asset precompiles, it’s recommended that you tell Rails to only partially load your app. Trucker also, does not provide the whole app environment to the build process, so this is required. In your `config/application.rb` set the following:
-
-```
-config.assets.initialize_on_precompile = false
-```
-
-**Disable Rails's static asset server**
-
-In `config/environments/production.rb`, change
-
-```
-config.server_static_assets = false
-```
-
-to
-
-```
-config.server_static_assets = true
-```
-
-**Compiling**
-
-Pre-compile your asset pipeline:
-
-```
-$ bundle exec rake assets:precompile
-```
-
-### Specify your Ruby Version
-
-Since you’ll want development / produciton parity, you’ll want to specify the same version of Ruby locally that you have in production. We’ll be using the ruby DSL introduced by Bundler. In your Gemfile add this to the bottom:
-
-```
-ruby '1.9.3'
-```
-
-or
-
-```
-ruby '2.0.0'
-```
-
-You can read more about specifying your Ruby Version.
-
-## Store your app in Git
-
-```
-$ git init
-$ git add .
-$ git commit -m "init"
-```
+Additionally, you should have a Trucker account, the trucker command line client installed on your machine, and logged in the Trucker service. If not, have a look at our [[getting started]] section.
 
 ## Deploy your application to Trucker
 
@@ -181,26 +40,31 @@ Domain> trucker.io
 
 Creating route trucker-test.trucker.io... OK
 Binding trucker-test.trucker.io to trucker-test... OK
-```
 
-Time to add a mysql service
-
-```
 Create services for application?> y
 
-1: blazemeter n/a, via blazemeter
-2: cleardb n/a, via cleardb
-3: cloudamqp n/a, via cloudamqp
-4: elephantsql n/a, via elephantsql
+1: rds-mysql n/a, via aws
+2: redis 2.6
+3: user-provided , via
+What kind?> 1
 
-What kind?> 2
+Name?> rds-mysql-aa0d6
 
-Name?> cleardb-505d6
+1: 100mb: Shared service, 100MB storage, 10 connections
+Which plan?> 1
 
-Creating service cleardb-505d6... OK
-Binding cleardb-505d6 to trucker-test... OK
+Creating service rds-mysql-aa0d6... OK
+Binding rds-mysql-aa0d6 to trucker-rails... OK
 Create another service?> n
+
+Bind other services to application?> n
+
+Save configuration?> y
+
+Saving to manifest.yml... OK
+Uploading trucker-rails
 ```
+
 
 **Deployment**
 
@@ -240,7 +104,7 @@ You application is now available at http://trucker-test.trucker.io
 To use the Rails console with your database service, tunnel into the service, and choose 'none' when it asks you which client to start:
 
 ```
-$ truck tunnel cleardb-505d6
+$ truck tunnel rds-mysql-aa0d6
 
 Opening tunnel on port 10000... OK
 
@@ -248,8 +112,8 @@ Service connection info:
   username : a1bc23d4567890
   password : abcde1fg
   name     : ab_c123d45de67f890
-  jdbcUrl  : jdbc:mysql://a1bc23d4567890:abcde1fg@us-cdbr-east-04.cleardb.com:3306/ab_c123d45de67f890
-  uri      : mysql://a1bc23d4567890:abcde1fg@us-cdbr-east-04.cleardb.com:3306/ab_c123d45de67f890?reconnect=true
+  jdbcUrl  : jdbc:mysql://a1bc23d4567890:abcde1fg@ccdb.cb1a3tdjjo2d.eu-west-1.rds.amazonaws.com:3306/ab_c123d45de67f890
+  uri      : mysql://a1bc23d4567890:abcde1fg@ccdb.cb1a3tdjjo2d.eu-west-1.rds.amazonaws.com:3306/ab_c123d45de67f890?reconnect=true
 
 
 Open another shell to run command-line clients or
@@ -257,7 +121,7 @@ use a UI tool to connect using the displayed information.
 Press Ctrl-C to exit...
 ```
 
-Next, create another database section in your `config/database.yml` file with the service connection info in the af tunnel output:
+Next, create another database section in your `config/database.yml` file with the service connection info in the truck tunnel output:
 
 ```
 proxied-trucker: 
@@ -337,50 +201,3 @@ When you are finished with debugging your application you can reset the environm
 ```
 truck unset-env [application-name] RAILS_ENV
 ```
-
-## Rails Troubleshooting
-
-### Missing a gem
-
-If your app crashes due to missing a gem, you may have it installed locally but not specified in your `Gemfile`. You must isolate all local testing using `bundle exec`. For example, don’t run `ruby web.rb`, run `bundle exec ruby web.rb`. Don’t run `rake db:migrate`, run `bundle exec rake db:migrate`.
-
-Another approach is to create a blank RVM gemset to be absolutely sure you’re not touching any system-installed gems:
-
-```
-$ rvm gemset create myapp
-$ rvm gemset use myapp
-```
-
-### Runtime dependencies on development/test gems
-
-If you’re still missing a gem when you deploy, check your Bundler groups. Trucker builds your app without the `development` or `test` groups, and if your app depends on a gem from one of these groups to run, you should move it out of the group.
-
-One common example using the RSpec tasks in your `Rakefile`. If you see this in your Trucker deploy:
-
-```
-$ bundle install --without development:test
-...
-$ bundle exec rake -T
-rake aborted!
-no such file to load -- rspec/core/rake_task
-```
-
-Then you’ve hit this problem.
-You can fix it by making these Rake tasks conditional on the gem load. For example:
-
-### Rakefile
-
-```
-begin
-  require "rspec/core/rake_task"
-
-  desc "Run all examples"
-  RSpec::Core::RakeTask.new(:spec) do |t|
-    t.rspec_opts = %w[--color]
-    t.pattern = 'spec/**/*_spec.rb'
-  end
-rescue LoadError
-end
-```
-
-Confirm it works locally, then push to Trucker.
