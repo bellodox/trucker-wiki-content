@@ -11,13 +11,8 @@ The dashboard is currently in active development. It's main current objective is
 
 Several applications can be instantly launched through the [trucker dashboard], with the following steps:
 * Click 'Deploy new app'
-* Select an application type from the grid menu:
-
-![Select Application Type](http://webfront.ie.trucker.io/assets/images/trucker-io-logo.png)
-
-* Type in a domain name for your application:
-
-![Select Application Type](http://webfront.ie.trucker.io/assets/images/trucker-io-logo.png)
+* Select an application type from the grid menu
+* Type in a domain name for your application
 * Click 'Deploy'
 
 After your application is done being deployed, you will be able to configure it. From the dashboard, you can perform  actions such as scaling your application, adding services to it (e.g, MySQL), or edit the application domains.
@@ -34,7 +29,7 @@ The buildpack model has been developed by Heroku, and it was made open-source, w
 Trucker **officially supports** the frameworks/runtimes listed below:
 
 * Ruby: 
-  * [[Rails|Rails-3]] 
+  * [[Rails|Rails-3]]
   * [[Rack|Rack]]
   * [[Sinatra|Sinatra]]
 * Java:
