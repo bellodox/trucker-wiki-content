@@ -147,5 +147,4 @@ Password: remote_password
 ```
 
 Our remote DB should now have the drupal configuration and contents that we have performed locally, and our Drupal Application on trucker should now work with Amazon S3.
-=======
-```
+

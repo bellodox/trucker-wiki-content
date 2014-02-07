@@ -156,7 +156,7 @@ $ truck crashlogs appname # Show the logs of a crashed application instance
 ```
 
 ## Next Steps
-You now know what the general deployment procedure looks like, but your application might require some special configuration to deploy, depending on the web framework/runtime it is using. Have a look at how we [[deploy applications that use various web frameworks|Web Framework Deployment]].
+You now know what the general deployment procedure looks like, but your application might require some special configuration to deploy, depending on the web framework/runtime it is using. Have a look at how we [[deploy applications that use various web frameworks|Guides-for-various-application-types]].
 
 You might also be interested in [[deploying different services and bind them to your applications|Services]].
 
