@@ -26,27 +26,37 @@ On its own, Trucker is framework- and Runtime-agnostic. It deploys applications 
 
 The buildpack model has been developed by Heroku, and it was made open-source, where it found the support of the CloudFoundry community. There are, therefore, many buildpacks that support a considerable amount of popular frameworks, and can be used out of the box with Trucker.
 
-Trucker **officially supports** the frameworks/runtimes listed below:
+#### Official Support
 
-* Ruby: 
-  * [[Rails|Rails-3]]
-  * [[Rack|Rack]]
-  * [[Sinatra|Sinatra]]
-* Java:
-  * [[Java Spring|Java]] 
-  * [[Grails|Java]] 
-  * [[Scala Lift|Java]] 
-  * [[Play|Java]]
-* Javascript: 
-  * [[Node.js|Nodejs]]
- 
-Trucker will automatically detect applications that use any of the frameworks listed above. 
+Trucker **officially supports** the frameworks/runtimes listed below. Official support means that Trucker will automatically detect applications that use any of the frameworks listed here. 
 
-#### Other Buildpacks
+| Runtime | Framework/CMS |
+|:-------:|:---------:|
+| Ruby    | [[Ruby on Rails]] |
+|         | Rack |
+|         | Sinatra |
+| Node.js | [[Express]]|
+|Java     | [[Main Class|Java#Main-Class]] |
+|         | [[Spring|Java#Spring]] |
+|         | [[Play|Java#Play]]   |
+
+#### Community Support
 
 If your application does not use any of the officially supported buildpacks, you might be able to find a suitable buildpack from the following sources:
 * [CloudFoundry community buildpacks](https://github.com/cloudfoundry-community/cf-docs-contrib/wiki/Buildpacks). 
 * [Heroku third-party buildpacks](https://devcenter.heroku.com/articles/third-party-buildpacks). It is not certain that these buildpacks will work on Trucker.
+ 
+
+Among others, you can find buildpacks for the following runtimes/frameworks:
+
+| Runtime | Framework/CMS |
+|:-------:|:---------:|
+| PHP     | [[Simple app|PHP]] |
+|         | [[Wordpress]]  | 
+|         | [[Drupal]] |
+|         | [[Joomla!]]|
+| Python  | [[Python]] |
+| Static Site|[[Static Site|Nginx]]|
 
 To deploy your application with one of these buildpacks, you will have to explicitly specify the buildpack source, during deployment:
 ```bash

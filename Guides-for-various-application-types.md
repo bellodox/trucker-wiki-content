@@ -4,12 +4,13 @@ The [[application deployment guide|Deploy-your-Application]] has summarized the 
 | Runtime | Framework/CMS |
 |:-------:|:---------:|
 | Ruby    | [[Ruby on Rails]] |
-| PHP     | [[Simple app|PHP]| 
-| PHP     | [[Wordpress]]  | 
+| PHP     | [[Simple app|PHP]] | 
+| | [[Wordpress]]  | 
 |         | [[Drupal]] |
 |         | [[Joomla!]]|
 | Node.js | [[Express]]|
-|Java     | [[Main Class|Java#Spring]] |
+|Java     | [[Main Class|Java#Main-Class]] |
 |         | [[Spring|Java#Spring]] |
 |         | [[Play|Java#Play]]   |
-| [[Static Nginx|Nginx]]||
+| Python     | [[Python]] | 
+| Static Site|[[Static Site|Nginx]]|
