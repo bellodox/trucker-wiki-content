@@ -43,6 +43,7 @@ Trucker **officially supports** the frameworks/runtimes listed below. Official s
 #### Community Support
 
 If your application does not use any of the officially supported buildpacks, you might be able to find a suitable buildpack from the following sources:
+
 * [CloudFoundry community buildpacks](https://github.com/cloudfoundry-community/cf-docs-contrib/wiki/Buildpacks). 
 * [Heroku third-party buildpacks](https://devcenter.heroku.com/articles/third-party-buildpacks). It is not certain that these buildpacks will work on Trucker.
  
@@ -58,7 +59,9 @@ Among others, you can find buildpacks for the following runtimes/frameworks:
 | Python  | [[Python]] |
 | Static Site|[[Static Site|Nginx]]|
 
+
 To deploy your application with one of these buildpacks, you will have to explicitly specify the buildpack source, during deployment:
+
 ```bash
 $ truck push [appname] --buildpack=[git url]
 ```
