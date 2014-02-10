@@ -88,7 +88,7 @@ Name> HelloWorldApp #Can contain alphanumeric and special chars, except spaces.
 Instances> 1 #How many instances of your application do you need?
 
 1: 128M       # You need to provide a memory limit for your application container. 
-2: 256M       # Applications that exceed this limit, are restarted, so make  memory.
+2: 256M       # Applications that exceed this limit, are restarted, so make
 3: 512M       # sure your application is provided with enough memory.
 4: 1G                            
 Memory Limit> 512M
