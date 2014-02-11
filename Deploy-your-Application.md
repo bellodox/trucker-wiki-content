@@ -88,7 +88,7 @@ Name> HelloWorldApp #Can contain alphanumeric and special chars, except spaces.
 Instances> 1 #How many instances of your application do you need?
 
 1: 128M       # You need to provide a memory limit for your application container. 
-2: 256M       # Applications that exceed this limit, are restarted, so make
+2: 256M       # Applications that exceed this limit are restarted, so make
 3: 512M       # sure your application is provided with enough memory.
 4: 1G                            
 Memory Limit> 512M
@@ -104,13 +104,13 @@ Subdomain> helloworldapp    # The subdomain where your application will be avail
 Domain> ie.trucker.io     # configuration will be the endpoint of the application
 
 Creating route HelloWorldApp.ie.trucker.io... OK
-Binding HelloWorldApp.ie.trucker.io to myRoRApp... OK
+Binding HelloWorldApp.ie.trucker.io to HelloWorldApp... OK
 
 Create services for application?> n   # Does your application require a service (e.g, MySQL DB)?
 
 Bind other services to application?> n
 
-Save configuration?> y   # Save the configuration in 
+Save configuration?> y   # Save the configuration to a yml file
 
 Saving to manifest.yml... OK
 Uploading myRoRApp... OK
