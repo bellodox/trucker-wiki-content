@@ -58,7 +58,8 @@ $ bundle install
 
 ### Using the assets pipeline 
 
-Since Rails 3.1 we can make use of the assets pipeline. To use this feature on Trucker.io we need to do a couple of changes.
+Since Rails 3.1 we can make use of the assets pipeline. To use this
+feature on Trucker.io we need to perform  a couple of changes.
 
 1. Change the `config/application.rb`
 
@@ -72,7 +73,7 @@ config.assets.initialize_on_precompile = false
 config.server_static_assets = true
 ```
 
-By default Trucker.io will compile your assets during a new `truck push`. To speed up this process yould could compile your assets locally.
+By default Trucker.io will compile your assets during a new `truck push`. To speed up this process you could compile your assets locally.
 
 ```
 $ bundle exec rake assets:precompile
