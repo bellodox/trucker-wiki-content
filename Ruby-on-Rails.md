@@ -7,6 +7,93 @@ The aim of this guide is to walk you through the deployment of a [Ruby on Rails]
 Deploying a Rails app on Trucker requires a bit of basic knowledge on Ruby, Rubygems, Bundler, and of course Rails 3.
 Additionally, you should have a Trucker account, the trucker command line client installed on your machine, and logged in the Trucker service. If not, have a look at our [[getting started]] section.
 
+## Application setup
+
+Before deploying your application to Trucker.io, it's a good idea to think about your production database.
+
+### MySQL example 
+
+First we need to specify the correct version of the MySQL2 gem in our Gemfile:
+
+**For Rails 3.0** 
+
+```
+group :production do
+  gem 'mysql2', '< 0.3'
+end
+```
+
+**Rails 3.1.x** 
+
+```
+# Rails 3.1 can use the latest mysql2 gem.
+group :production do
+  gem 'mysql2'
+end
+```
+
+Now let's update the `config/database.yml` to use the `mysql2` adapter.
+
+```
+development:
+  ...
+
+test:
+  ...
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  database: 
+  pool: 5
+  username: 
+  password:
+```
+
+Don't forget to update your `Gemfile.lock` by running:
+
+```
+$ bundle install
+```
+
+### Using the assets pipeline 
+
+Since Rails 3.1 we can make use of the assets pipeline. To use this feature on Trucker.io we need to do a couple of changes.
+
+1. Change the `config/application.rb`
+
+```
+config.assets.initialize_on_precompile = false
+```
+
+2. Disable static asset server in `config/environments/production.rb`
+
+```
+config.server_static_assets = true
+```
+
+By default Trucker.io will compile your assets during a new `truck push`. To speed up this process yould could compile your assets locally.
+
+```
+$ bundle exec rake assets:precompile
+```
+
+Trucker.io will look for a `public/assets/manifest.yml` file during a push to check if you compiled your assets locally. If this file is not present, it will still compile the assets during a push.
+
+### Using different Ruby versions
+
+To use a different Ruby version, add the disired version to the bottom of your `Gemfile`.
+
+```
+ruby '1.9.3'
+```
+
+or
+
+```
+ruby '2.0.0'
+```
+
 ## Deploy your application to Trucker
 
 **Push the application to Trucker.io**
