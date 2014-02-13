@@ -6,7 +6,7 @@ This guide will learn you how to assign custom domain names to your apps.
 Set the following records for your custom domain:
 
 ```bash
-www   CNAME ssl0.ie.trucker.io.
+www   CNAME gate.ie.trucker.io.
 *     A     54.194.83.183
 ```
 
