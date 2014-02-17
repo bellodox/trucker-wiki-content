@@ -6,6 +6,7 @@ In general, there are two ways of deploying an application with Trucker:
 * Use the [trucker command-line client].
 * The second way would be deploying your application using our Trucker console. This is currently under active development. It's main current objective is to offer you the ability to monitor your deployments and visualize data, rather than let you deploy applications. The [trucker command-line client] can be potentially used to deploy many more types of applications.
 
+<!-- 
 ## Using the trucker dashboard
 
 The trucker dashboard is currently in active development. When it goes live, you will be able to use it to instantly launch several application types, with the following steps:
@@ -15,14 +16,15 @@ The trucker dashboard is currently in active development. When it goes live, you
 * Type in a domain name for your application
 * Click 'Deploy'
 
-After your application is done being deployed, you will be able to configure it. From the dashboard, you can perform  actions such as scaling your application, adding services to it (e.g, MySQL), or edit the application domains.
+After your application is done being deployed, you will be able to configure it. From the dashboard, you can perform  actions such as scaling your application, adding services to it (e.g, MySQL), or edit the application domains. 
+-->
 
 ## Using the trucker command line client
 As a prerequisite, you need to be logged in Trucker using the command line client. If not, see the [[Getting Started Guide|Getting-Started]].
 
 ### Does Trucker support my application?
 
-On its own, Trucker is framework- and Runtime-agnostic. It deploys applications using [[buildpacks]], which are packaged scripts that instruct the platform on how to stage applications using a specific Runtime/Framework. 
+On its own, Trucker is framework- and Runtime-agnostic. It deploys applications using buildpacks, which are packaged scripts that instruct the platform on how to stage applications using a specific Runtime/Framework. 
 
 The buildpack model has been developed by Heroku, and it was made open-source, where it found the support of the CloudFoundry community. There are, therefore, many buildpacks that support a considerable amount of popular frameworks, and can be used out of the box with Trucker.
 
