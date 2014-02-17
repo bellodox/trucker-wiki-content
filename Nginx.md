@@ -9,7 +9,7 @@ This quickstart will get you going with hosting static HTML sites on Trucker.io 
 
 ## Local workstation setup<a name="local-workstation-setup-2"></a>
 
-[Install Trucker Command Line Tool](Getting-Started#install-trucker-command-line-tool) on your local workstation. This ensures that you have access to the Trucker command-line client, Foreman, and the Git revision control system.
+[Install Trucker Command Line Tool](Getting-Started#Install-the-Command-Line-Tool) on your local workstation. This ensures that you have access to the Trucker command-line client, Foreman, and the Git revision control system.
 Once installed, you’ll have access to the trucker command from your command shell. Log in using the email address and password you used when creating your Trucker account:
 
 ```
