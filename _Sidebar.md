@@ -18,7 +18,6 @@
   * [[Create a service instance|Services#Creating-service-instances]]
   * [[Bind a service instance to an application|Services#Bind a service instance to an application]]
   * [[Use the service instance|Services#Use the service instance]]
-1. [[Environment Variables|Environment-Variables]]
 1. [[Guides for various application types]]
   * [[Ruby on Rails]]
   * [[Node.js Express|Express]]
