@@ -4,9 +4,7 @@ This section goes over the steps that are required in order to deploy your appli
 In general, there are two ways of deploying an application with Trucker:
 
 * Use the [trucker command-line client].
-* Use the [trucker dashboard] to one-click deploy an application from a selection of runtimes and web-frameworks. We are striving towards adding more one-click-deploy applications in the dashboard. If you cannot find what you are looking for in the one-click deploy applications, you can always use the command-line client!
- 
-The dashboard is currently in active development. It's main current objective is to offer you the ability to monitor your deployments and visualize data, rather than let you deploy applications (even though it is still capable of that). The [trucker command-line client] can be potentially used to deploy many more types of applications.
+* The second way would be deploying your application using our Trucker console. This is currently under active development. It's main current objective is to offer you the ability to monitor your deployments and visualize data, rather than let you deploy applications. The [trucker command-line client] can be potentially used to deploy many more types of applications.
 
 ## Using the trucker dashboard
 
