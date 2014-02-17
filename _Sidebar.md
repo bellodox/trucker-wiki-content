@@ -1,6 +1,6 @@
 1. [[Home|Home]]
 1. [[Getting Started|Getting-Started]]
-  * [[Sign Up for An Account|Getting Started#sign-up-for-an-account]]
+  * [[Create An Account|Getting Started#Create-An-Account]]
   * [[Install Trucker Command Line Tool|Getting Started#install-trucker-command-line-tool]]
   * [[Log in Trucker|Getting Started#log-in-trucker]]
   * [[Next Steps|Getting Started#next-steps]]
