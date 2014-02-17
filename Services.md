@@ -5,8 +5,8 @@ Trucker offers a collection of services that you can add to your applications. S
 To use a service, you will have to:
 
 1. [Create a service instance](Services#Creating-service-instances)
-1. [Bind the instance to your application](Services#Binding-a-service-instance-to-your-application)
-1. [Use the service instance](Services#Use the service instance)
+1. [Bind the instance to your application](Services#Bind-a-service-instance-to-an-application)
+1. [Use the service instance](Services#Use-the-service-instance)
  
 
 ## Creating service instances
