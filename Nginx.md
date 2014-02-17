@@ -2,7 +2,7 @@
 
 * [[Local workstation setup|Nginx#local-workstation-setup-2]]
 * [[Custom configuration files|Nginx#Custom-configuration-files]]
-* [[Deploy your application to Trucker|Nginx#Deploy-your-application-to-trucker]]
+* [[Deploy your application to Trucker|Nginx#Deploy-your-application-to-Trucker]]
 * [[Example manifest file|Nginx#Example-manifest-file]]
 
 This quickstart will get you going with hosting static HTML sites on Trucker.io using Nginx.
