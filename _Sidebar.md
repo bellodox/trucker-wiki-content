@@ -15,6 +15,7 @@
   * [[When your app fails to start|Deploy Your Application#When-your-app-fails-to-start]]
   * [[Next Steps|Deploy Your Application#Next-steps]]
 1. [[Services|Services]]
+  * [[Overview|Services#Overview]]
   * [[Create a service instance|Services#Creating-service-instances]]
   * [[Bind a service instance to an application|Services#Bind a service instance to an application]]
   * [[Use the service instance|Services#Use the service instance]]
