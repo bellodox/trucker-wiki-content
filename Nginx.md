@@ -81,12 +81,12 @@ Creating trucker-test... OK
 2: none
 Subdomain> trucker-test
 
-1: trucker.io
+1: ie.trucker.io
 2: none
-Domain> trucker.io
+Domain> ie.trucker.io
 
-Creating route trucker-test.trucker.io... OK
-Binding trucker-test.trucker.io to trucker-test... OK
+Creating route trucker-test.ie.trucker.io... OK
+Binding trucker-test.ie.trucker.io to trucker-test... OK
 ```
 
 **Deployment**
@@ -96,7 +96,7 @@ You app will now be deployed, the output should look something like this:
 ```
 Creating trucker-test... OK
 
-Binding trucker-test.trucker.io to trucker-test... OK
+Binding trucker-test.ie.trucker.io to trucker-test... OK
 Uploading trucker-test... OK
 Preparing to start trucker-test... OK
 -----> Downloaded app package (360K)
@@ -106,10 +106,10 @@ Initialized empty Git repository in /tmp/buildpacks/nginx-buildpack.git/.git/
 -----> Uploading droplet (1.3M)
 Checking status of app 'trucker-test'....
   1 of 1 instances running (1 running)
-Push successful! App 'trucker-test' available at trucker-test.trucker.io
+Push successful! App 'trucker-test' available at trucker-test.ie.trucker.io
 ```
 
-You application is now available at http://trucker-test.trucker.io
+You application is now available at http://trucker-test.ie.trucker.io
 
 ## Example manifest file
 
