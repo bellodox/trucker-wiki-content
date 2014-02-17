@@ -38,7 +38,7 @@ $ gem install trucker-cli
 
 ## Log in Trucker
 
-You can create and manage applications using the  [Trucker control panel](https://cockpit.trucker.io). However you will need to also log in using the trucker command line client:
+You can manage your applications using the [Trucker console](https://console.trucker.io). However you will need to also log in using the trucker command line client:
 
 ```bash
 $ truck target https://api.ie.trucker.io
