@@ -3,6 +3,7 @@
 Trucker offers a collection of services that you can add to your applications. Services provide all kinds of functionality to your applications, like storing or caching data, application monitoring and analytics, emailing and more.
 
 To use a service, you will have to:
+
 1. [Create a service instance](Services#Creating-service-instances)
 1. [Bind the instance to your application](Services#Binding-a-service-instance-to-your-application)
 1. [Use the service instance](Services#Use the service instance)
