@@ -1,4 +1,4 @@
-### Table of Contents
+## Overview
 
 * [[How does it work|Continuous-Deployment#how-does-it-work]]
 * [[Create a manifest yaml|Continuous-Deployment#create-a-manifest-yaml]]
