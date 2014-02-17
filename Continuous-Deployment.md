@@ -1,11 +1,11 @@
 ## Overview
 
+Continuous deployment is part of the continuous delivery paradigm. The basic idea of continuous delivery is to automate the software delivery process as far as possible. This includes automated testing, continuous integration as well as continuous deployment.
+
 * [[How does it work|Continuous-Deployment#how-does-it-work]]
 * [[Create a manifest yaml|Continuous-Deployment#create-a-manifest-yaml]]
 * [[Continuous Deployment with Github and Travis CI|Continuous-Deployment#continuous-deployment-with-github-and-travis-ci]]
 * [[Continuous Deployment with Github and Jenkins|Continuous-Deployment#continuous-deployment-with-github-and-jenkins]]
-
-Continuous deployment is part of the continuous delivery paradigm. The basic idea of continuous delivery is to automate the software delivery process as far as possible. This includes automated testing, continuous integration as well as continuous deployment.
 
 ## How does it work
 
