@@ -83,11 +83,11 @@ $ truck push
 During the deployment, Trucker will request that you provide some configuration parameters:
 
 ```bash
-Name> HelloWorldApp #Can contain alphanumeric and special chars, except spaces.
+Name> HelloWorldApp # Can contain alphanumeric and special chars, except spaces.
 ```
 
 ```bash
-Instances> 1 #How many instances of your application do you need?
+Instances> 1  # How many instances of your application do you need?
 
 1: 128M       # You need to provide a memory limit for your application container. 
 2: 256M       # Applications that exceed this limit are restarted, so make
@@ -99,7 +99,7 @@ Creating HelloWorldApp... OK
 
 1: HelloWorldApp
 2: none
-Subdomain> helloworldapp    # The subdomain where your application will be available at
+Subdomain> helloworldapp  # The subdomain where your application will be available at
 
 1: ie.trucker.io
 2: none                   # The combination of the subdomain and the domain 
@@ -112,7 +112,7 @@ Create services for application?> n   # Does your application require a service 
 
 Bind other services to application?> n
 
-Save configuration?> y   # Save the configuration to a yml file
+Save configuration?> y    # Save the configuration to a yml file
 
 Saving to manifest.yml... OK
 Uploading myRoRApp... OK
@@ -149,7 +149,7 @@ appname: running
 ```
 
 ```bash
-$ truck stats appname # Retrieve info on the resource usage of your app
+$ truck stats appname  # Retrieve info on the resource usage of your app
 Getting stats for appname... OK
 
 instance   cpu    memory         disk
