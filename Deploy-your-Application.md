@@ -32,15 +32,17 @@ The buildpack model has been developed by Heroku, and it was made open-source, w
 
 Trucker **officially supports** the frameworks/runtimes listed below. Official support means that Trucker will automatically detect applications that use any of the frameworks listed here. 
 
-| Runtime | Framework/CMS |
-|:-------:|:---------:|
-| Ruby    | [[Ruby on Rails]] |
-|         | Rack |
-|         | Sinatra |
-| Node.js | [[Express]]|
-|Java     | [[Main Class|Java#Main-Class]] |
-|         | [[Spring|Java#Spring]] |
-|         | [[Play|Java#Play]]   |
+| Runtime   | Framework/CMS                  |
+| :-------: | :---------:                    |
+| Ruby      | [[Ruby on Rails]]              |
+|           | Rack                           |
+|           | Sinatra                        |
+| Node.js   | [[Express]]                    |
+| Java      | [[Tomcat|Java#Tomcat]]         |
+|           | [[Play|Java#Play]]             |
+|           | [[Spring|Java#Spring]]         |
+|           | [[Main Class|Java#Main-Class]] |
+|           | [[Groovy|Java#Groovy]]         |
 
 #### Community Support
 
